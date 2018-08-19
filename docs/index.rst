@@ -26,6 +26,6 @@ Directory
    :maxdepth: 2
 
    Getting Started
-   Flavors
+   flavors
    Developers
    
