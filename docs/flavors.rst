@@ -15,4 +15,4 @@ Easy
   Easy quickly followed CAPS when we developers at notmarkdown realizes that some people wouldn't want bulking, explicit indicators in their markup, and would like clear simplicity that plays nice with compiler and user. Easy is for whoever wants extremely neat-looking markup, while not minding learning a little syntax.
 
 Minty
-  Minty is like being slapped in the face by the truth. And by truth, we mean what your markup is doing. Minty is the most explanatory notmarkup library, where every key tells exactly what it does in its name. Hyperlink? ''/hyperlink''. It's as easy as that.
+  Minty is like being slapped in the face by the truth. And by truth, we mean what your markup is doing. Minty is the most explanatory notmarkup library, where every key tells exactly what it does in its name. Hyperlink? ``/hyperlink``. It's as easy as that.
