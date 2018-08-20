@@ -29,7 +29,9 @@ And, here are links to all of our different libraries:
 
 - https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/easy/easynmd.js
 
-- https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/CAPS/capsnmd.js
+- !Missing latest features! https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/CAPS/capsnmd.js
+
+- https://cdn.rawgit.com/ntrupin/notmarkdown/tree/master/flavors/standard
 
 ## Contribute
 
