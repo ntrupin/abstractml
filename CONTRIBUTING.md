@@ -32,6 +32,8 @@ If you have any problem during your time coding a library, don't be afraid to dr
 
 - Project may be an npm or cdnjs module. If they are, you **must** provide a link back to the repository. You wrote the module, so you don't need to provide credit to us in the code.
 
+- For JavaScript projects, the input must come from an element with the id "nmd-in" and be outputted to "nmd-out".
+
 ### Submitting 
 
 To submit your code, you must first create a fork from the repository. This is a you-(and anyone else you let contribute)-independent branch where you can make any changes you want, without it affecting the overall project. 
