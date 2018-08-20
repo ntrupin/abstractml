@@ -28,4 +28,5 @@ Directory
    getting_started
    flavors
    syntax
+   contributing
    
