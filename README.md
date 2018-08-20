@@ -69,13 +69,15 @@ If you have any problem during your time coding a library, don't be afraid to dr
 
 ### Submitting 
 
-To submit your code, you must first create a pull request from the repository. This is a you-(and anyone else you let contribute)-independent branch where you can make any changes you want, without it affecting the overall project. 
+To submit your code, you must first create a fork from the repository. This is a you-(and anyone else you let contribute)-independent branch where you can make any changes you want, without it affecting the overall project. 
 
-Once you open the pull, place your code inside a folder inside the flavors directory. ***DO NOT*** change any other files. We will wholeheartedly restrict you from contributing again.
+Once you open a fork, place your code inside a folder inside the flavors directory. ***DO NOT*** change any other files. We will wholeheartedly restrict you from contributing again.
 
 While making your changes, make sure you comment in your code, and that you commit graciously. Your commits will be reviewed by notmarkdown admins when you request to merge your branch with master. If your commit messages are not detailed, your merge will be terminated, though you will be invited to try again.
 
-For your convenience we have including a review cheat sheet to let you know what you should expect when your changes are approved.
+Once you complete your changes, submit a pull request. The admins must approve it, and then you may merge with master. If you are rejected, feel free to keep trying!
+
+For your convenience we have including a review cheat sheet to let you know what you should do to have your changes be approved
 
 #### Review Cheatsheet
 
