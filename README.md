@@ -21,6 +21,10 @@ Besides these, there are many more possibilities, and you'll have to explore and
 
 It's easy to include any notmarkdown library in your project. Simple include the following script tag with your choice of url at *the bottom* of the document *before* your scripts.
 
+You must have an element with the id "nmd-in". This is where the parser takes text from.
+
+You must have an element with the id "nmd-out". This is where the parser will output your text.
+
 ``<script src="url"></script>``
 
 And, here are links to all of our different libraries:
@@ -31,7 +35,7 @@ And, here are links to all of our different libraries:
 
 - !Missing latest features! https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/CAPS/capsnmd.js
 
-- https://cdn.rawgit.com/ntrupin/notmarkdown/tree/master/flavors/standard
+- https://cdn.rawgit.com/ntrupin/notmarkdown/f5c3456a/flavors/standard/nmd.js
 
 ## Contribute
 
@@ -66,6 +70,8 @@ If you have any problem during your time coding a library, don't be afraid to dr
 - parse() May not be called from within the library, it is exclusively for the developer working with the module to call.
 
 - Project may be an npm or cdnjs module. If they are, you **must** provide a link back to the repository. You wrote the module, so you don't need to provide credit to us in the code.
+
+- For JavaScript projects, the input must come from an element with the id "nmd-in" and be outputted to "nmd-out".
 
 ### Submitting 
 
