@@ -27,6 +27,6 @@ function parse() {
   .replace(new RegExp("header3/", "g"), "<h3>")
   .replace(new RegExp("/header3", "g"), "</h3>")
  
- document.getElementById("nmd-out").innerHTML = t3x6
- console.log(t3x6)
+ document.getElementById("nmd-out").innerHTML = output
+ console.log(output)
 }
