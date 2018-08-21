@@ -1,5 +1,7 @@
 # notmarkdown
 
+<img src="https://cdn.rawgit.com/ntrupin/notmarkdown/66618e7c/636B43E8-179D-40FB-8FF6-09DE7EA1096E.jpeg" width="50%">
+
 The multi-flavored markup language that isn't Markdown.
 
 ## What is it?
@@ -29,13 +31,13 @@ You must have an element with the id "nmd-out". This is where the parser will ou
 
 And, here are links to all of our different libraries:
 
-- https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/minty/mintynmd.js
+- https://raw.githubusercontent.com/ntrupin/notmarkdown/master/flavors/minty/mintynmd.js
 
-- https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/easy/easynmd.js
+- https://raw.githubusercontent.com/ntrupin/notmarkdown/master/flavors/easy/easynmd.js
 
-- !Missing latest features! https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/CAPS/capsnmd.js
+- Deprecated - can be picked up by new developer! https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/CAPS/capsnmd.js
 
-- https://cdn.rawgit.com/ntrupin/notmarkdown/f5c3456a/flavors/standard/nmd.js
+- https://raw.githubusercontent.com/ntrupin/notmarkdown/master/flavors/standard/nmd.js
 
 ## Contribute
 
