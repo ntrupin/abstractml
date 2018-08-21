@@ -113,7 +113,21 @@ While writing, make sure you clearly comment in your code; someone may come and 
 
 Remember to respect the wishes of whoever wrote the library before you. If there are comments telling you to not change something, please acknowledge, and find another way to accomplish what you were going to do.
 
-### Submitting 
+#### Guidelines
+
+- Code must only edit text, and not interact with the outside page.
+
+- Code must be clearly described via commits.
+
+- Code must be encased in a function titled "parse()".
+
+- parse() May not be called from within the library, it is exclusively for the developer working with the module to call.
+
+- Project may be an npm or cdnjs module. If they are, you **must** provide a link back to the repository. You wrote the module, so you don't need to provide credit to us in the code.
+
+- For JavaScript projects, the input must come from an element with the id "nmd-in" and be outputted to "nmd-out".
+
+#### Submitting 
 
 To submit your code, you must first create a fork from the repository. This is a you-(and anyone else you let contribute)-independent branch where you can make any changes you want, without it affecting the overall project. 
 
