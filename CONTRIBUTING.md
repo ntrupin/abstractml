@@ -2,7 +2,9 @@
 
 Thanks to GitHub, making a contribution is easy, and we love all the help that we can get. notmarkdown is a fun, quirky project; perfect for beginners or experts who want to have a good time helping to write code. Read on to see how to contribute.
 
-### Familiarize
+### Create Your Own Library
+
+#### Familiarize
 
 Before you start writing, it is best to familiarize yourself with the format and code style of the current libraries. Having libraries that are uniform helps developers that come along later, and are just nearer in general. 
 
@@ -55,3 +57,53 @@ For your convenience we have including a review cheat sheet to let you know what
 - You must not have modified any code except your own.
 
 - Your library name must be unique.
+
+### Adding to a Current Library
+
+#### Familiarize
+
+It is important that you familiarize yourself with the module you will be contributing to, as you must keep a uniform code style throughout the document. That means if the library is enclosing text in parenthesis, you may not change it to brackets.
+
+#### Edit and Add
+
+When you are editing, it is totally okay to make changes to part of the module that was written before you started working on it. Your goal is to make the library work smoothly and have the most functionality, and that can't always be achieved just by adding on. Just make sure to detail what you changed in your pull request, along with what you added.
+
+While writing, make sure you clearly comment in your code; someone may come and work on it after you, and they will have to know what is going on. Similarly, keep your commit messages clean and descriptive, so the admins know exactly what you did when approving the request. 
+
+Remember to respect the wishes of whoever wrote the library before you. If there are comments telling you to not change something, please acknowledge, and find another way to accomplish what you were going to do.
+
+#### Guidelines
+
+- Code must only edit text, and not interact with the outside page.
+
+- Code must be clearly described via commits.
+
+- Code must be encased in a function titled "parse()".
+
+- parse() May not be called from within the library, it is exclusively for the developer working with the module to call.
+
+- Project may be an npm or cdnjs module. If they are, you **must** provide a link back to the repository. You wrote the module, so you don't need to provide credit to us in the code.
+
+- For JavaScript projects, the input must come from an element with the id "nmd-in" and be outputted to "nmd-out".
+
+#### Submitting 
+
+To submit your code, you must first create a fork from the repository. This is a you-(and anyone else you let contribute)-independent branch where you can make any changes you want, without it affecting the overall project. 
+
+Once you open a fork, place your code inside the library you are editing's file inside the flavors directory. ***DO NOT*** delete any other files. We will wholeheartedly restrict you from contributing again.
+
+While making your changes, make sure you comment in your code, and that you commit graciously. Your commits will be reviewed by notmarkdown admins when you request to merge your branch with master. If your commit messages are not detailed, your merge will be terminated, though you will be invited to try again.
+
+Once you complete your changes, submit a pull request. The admins must approve it, and then you may merge with master. If you are rejected, feel free to keep trying!
+
+For your convenience we have including a review cheat sheet to let you know what you should do to have your changes be approved
+
+#### Review Cheatsheet
+
+- Your code must be commented well enough to be understood be even the newest developer. 
+
+- Your commits must be rich with information of your changes. 
+
+- You must not have modified any code except the library you are working on.
+
+- Your library name must be kept the same.
