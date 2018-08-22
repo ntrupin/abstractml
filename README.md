@@ -1,4 +1,4 @@
-# notmarkdown ![](https://img.shields.io/github/stars/ntrupin/notmarkdown.svg) ![](https://img.shields.io/github/license/ntrupin/notmarkdown.svg)
+# notmarkdown ![](https://img.shields.io/github/stars/ntrupin/notmarkdown.svg) ![](https://img.shields.io/github/forks/ntrupin/notmarkdown.svg) ![](https://img.shields.io/github/license/ntrupin/notmarkdown.svg) 
 
 <img src="https://cdn.rawgit.com/ntrupin/notmarkdown/66618e7c/636B43E8-179D-40FB-8FF6-09DE7EA1096E.jpeg" width="50%">
 
@@ -35,7 +35,7 @@ And, here are links to all of our different libraries:
 
 - https://raw.githubusercontent.com/ntrupin/notmarkdown/master/flavors/easy/easynmd.js
 
-- Deprecated - can be picked up by new developer! https://cdn.rawgit.com/ntrupin/notmarkdown/d16dea5f/flavors/CAPS/capsnmd.js
+- https://raw.githubusercontent.com/ntrupin/notmarkdown/master/flavors/CAPS/capsnmd.js
 
 - https://raw.githubusercontent.com/ntrupin/notmarkdown/master/flavors/standard/nmd.js
 
