@@ -1,4 +1,4 @@
-# notmarkdown
+# notmarkdown ![](https://img.shields.io/github/stars/ntrupin/notmarkdown.svg) ![](https://img.shields.io/github/license/ntrupin/notmarkdown.svg)
 
 <img src="https://cdn.rawgit.com/ntrupin/notmarkdown/66618e7c/636B43E8-179D-40FB-8FF6-09DE7EA1096E.jpeg" width="50%">
 
