@@ -19,7 +19,7 @@ notmarkdown isn't just a markup language, it is a *flavored* markup language. Th
 
 Besides these, there are many more possibilities, and you'll have to explore and test to find what's best.
 
-## Usage
+## Usage (JavaScript)
 
 It's easy to include any notmarkdown library in your project. Simply include the following script tag with your choice of url at *the bottom* of the document *before* your scripts.
 
