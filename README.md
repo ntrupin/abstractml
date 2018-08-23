@@ -130,9 +130,9 @@ Remember to respect the wishes of whoever wrote the library before you. If there
 
 - parse() May not be called from within the library, it is exclusively for the developer working with the module to call.
 
-- Project may be an npm or cdnjs module. If they are, you **must** provide a link back to the repository. You wrote the module, so you don't need to provide credit to us in the code.
+- Project may be an npm, pip, or any other package manager module. If they are, you **must** provide a link back to the repository. You wrote the module, so you don't need to provide credit to us in the code.
 
-- For JavaScript projects, the input must come from an element with the id "nmd-in" and be outputted to "nmd-out".
+- For JavaScript and eRuby projects, the input must come from an element with the id "nmd-in" and be outputted to "nmd-out".
 
 #### Submitting 
 
