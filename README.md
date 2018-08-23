@@ -39,6 +39,12 @@ And, here are links to all of our different libraries:
 
 - https://raw.githubusercontent.com/ntrupin/notmarkdown/master/flavors/standard/nmd.js
 
+## Special Thanks
+
+### Contributors
+
+- [@knjk04](https://github.com/knjk04): Thank you for fixing spelling and gramatical errors in the README!
+
 ## Contribute
 
 Thanks to GitHub, making a contribution is easy, and we love all the help that we can get. notmarkdown is a fun, quirky project; perfect for beginners or experts who want to have a good time helping to write code. Read on to see how to contribute.
