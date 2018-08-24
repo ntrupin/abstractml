@@ -17,7 +17,7 @@ notmarkdown isn't just a markup language, it is a *flavored* markup language. Th
 
 - want syntax so defining it's like a breath of crisp air? Try the minty library.
 
-Besides these, there are many more possibilities, and you'll have to explore and test to find what's best.
+Besides these, there are many more possibilities, and you'll have to explore and test to find what's best. Better yet, notmarkdown compiles in HTML at runtime, meaning you can generate web pages with it! The nmd-lang library is what you would use for that.
 
 ## Usage (JavaScript)
 
