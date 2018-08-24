@@ -1,5 +1,5 @@
 function parse() {
- text = document.getElementById("nmd-in").value
+ text = document.getElementById("nmd-in").innerHTML
  output = text
  .replace(new RegExp("}/", "g"), "<i>")
  .replace(new RegExp("/{", "g"), "</i>")
@@ -12,7 +12,7 @@ function parse() {
  .replace(new RegExp("'/", "g"), "<p style='display:inline;color:")
  .replace(new RegExp("/'", "g"), "</p>")
  .replace(new RegExp("/v/", "g"), "<br>")
- .replace(new RegExp("/_/", "g"), "<hr>")
+ .replace(new RegExp("/p/", "g"), "<hr>")
  .replace(new RegExp("-", "g"), "'>")
  .replace(new RegExp(";;", "g"), Math.floor(Math.random() * 1000000001).toString())
  .replace(new RegExp("•/", "g"), "<img src='")
@@ -33,8 +33,10 @@ function parse() {
  .replace(new RegExp("/5", "g"), "</h4>")
  .replace(new RegExp("6/", "g"), "<h4>")
  .replace(new RegExp("/6", "g"), "</h4>")
- .replace(new RegExp("|:/", "g"), "<iframe src='")
- .replace(new RegExp("/:|", "g"), "'></iframe>")
+ .replace(new RegExp("=/", "g"), "<iframe src='")
+ .replace(new RegExp("/=", "g"), "'></iframe>")
+ .replace(new RegExp("#/", "g"), "<center>")
+ .replace(new RegExp("/#", "g"), "</center>")
  
  document.getElementById("nmd-out").innerHTML = output
  console.log(output)
