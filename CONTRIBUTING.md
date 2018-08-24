@@ -1,109 +1,104 @@
-## Contribute
+## Contributing
 
-Thanks to GitHub, making a contribution is easy, and we love all the help that we can get. notmarkdown is a fun, quirky project; perfect for beginners or experts who want to have a good time helping to write code. Read on to see how to contribute.
+Thanks to GitHub, it is very easy to contribute to open source. To make your first contribution, just follow the guide below.
 
-### Create Your Own Library
+### Familiarize
 
-#### Familiarize
+Before you contribute, it is important that you Familiarize yourself with code syntax, structure, and style. The code you write must maintain uniform with already established code to make sure it functions properly and looks best for future contributors. 
 
-Before you start writing, it is best to familiarize yourself with the format and code style of the current libraries. Having libraries that are uniform helps developers that come along later, and are just nearer in general. 
+The code for the compiler is in the /src/ directory. Since that is where you will be coding, this is where you should familiarize. 
 
-The current flavors can be found in the "flavors" directory of the GitHub repository. The base libraries all use .replace and RegExp methods to procedurally parse text, and, though this is the recommended way, you are free to do whatever you want! Just make it as best (and as fun) as you can.
+The entire script uses cases and switched, to provide smooth flowing through different layers of the parsing process. Please, do not use if/else statements. They take up a lot more space and often do not work as planned. 
 
-You'll notice that all the libraries have names styled the same way: {name}nmd.js. The name is the title your library will go by in the repo and in the documentation. The "nmd" indicates that it isn't Markdown. The .js is because the libraries are primarily JavaScript files, and that is their file extension. Though the developers at notmarkdown write it in JavaScript (for the web), you can write it in any language you wish. Building a fancy CLI or text editor in Python? Whip up a Python module! Writing a game in Unity and want to add rich text features that aren't Markdown? Feel free to create a C# module.
+### Fork
+
+This is where you start contributing. To fork the repository, click the button in the top right corner of the main page of the repository. This will create a clone of LineScript under your name, with you as the owner. 
+
+A fork is a branch of a repository where you can edit whatever you want without it affecting the overall project. While this may be true, you are discouraged from doing so, as it will render you unable to submit a pull request to push your changes. 
+
+Instead, take this opportunity to test bits of code to see what they do. When you feel you are ready to begin writing, you may move on. 
 
 ### Write
 
-You may write you code anywhere you choose, and, though contrary to our recommendation, any way you choose. This is open source, not a dictatorship. We ask that you review the guidelines before you begin. 
+This is where your contribution takes place. You will be writing in the compiler, so you should open up that file. You now have the opportunity to add and edit the code, and that is exactly what you are going to do. 
 
-When writing your code, you may develop in any language you wish; languages that don't have a module are encouraged the write for.
+#### Add
 
-While writing your code, make sure that you detail each aspect through comments. When you submit a request to merge your files, the repository admins will use these. Besides the formality, it also will help future developers know what is going on!
+If you are adding to the code, navigate to the bottom of the document. Make sure you are still inside the parse() function. This is where you will make your entry. Copy and paste code from another section of the document and add it to the bottom. Once the formatting is set up how you feel is correct, you may edit the values in your copied function to encompass a new tag. For example, if you copied the "1" tag and are creating a "3" tag, you would change 
 
-If you have any problem during your time coding a library, don't be afraid to drop an issue on the repository! It isn't a sign of weakness, but a sign of willing to contribute. Who knows? Your issue may teach someone something!
+**This**
 
-#### Guidelines
+```javascript
+  case "1":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<h1>" + c[1] + "</h1>"
+     return output;
+     break;
+    default:
+     output = "<h1 " + v[1] + ">" + c[1] + "</h1>"
+     return output;
+     break;
+   }
+```
 
-- Code must only edit text, and not interact with the outside page.
+to **This**
 
-- Code must be clearly described via commits.
+```javascript
+  case "3":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<h3>" + c[1] + "</h3>"
+     return output;
+     break;
+    default:
+     output = "<h3 " + v[1] + ">" + c[1] + "</h3>"
+     return output;
+     break;
+   }
+```
 
-- Code must be encased in a function titled "parse()".
+Or, you may also write your own function from scratch, and include your own special functionality. It all depends on what you think you can do! Just make sure to comment and commit descriptively, so it is crystal-clear what you did. 
 
-- parse() May not be called from within the library, it is exclusively for the developer working with the module to call.
+#### Edit
 
-- Project may be an npm or cdnjs module. If they are, you **must** provide a link back to the repository. You wrote the module, so you don't need to provide credit to us in the code.
+If you find a bug in a function, or just want to make it more practical or add on, you can edit nonexistent functions! This can be done by simply editing values in a function of adding more cases to it. The more cases in a function, the more powerful it is. For example, if you wanted to add styles to a "1" tag, you would change
 
-- For JavaScript projects, the input must come from an element with the id "nmd-in" and be outputted to "nmd-out".
+**This**
 
-### Submitting 
+```javascript
+  case "1":
+   switch(v[1]) {
+    default:
+     output = "<h1 " + v[1] + ">" + c[1] + "</h1>"
+     return output;
+     break;
+   }
+```
 
-To submit your code, you must first create a fork from the repository. This is a you-(and anyone else you let contribute)-independent branch where you can make any changes you want, without it affecting the overall project. 
+to **This**
 
-Once you open a fork, place your code inside a folder inside the flavors directory. ***DO NOT*** change any other files. We will wholeheartedly restrict you from contributing again.
+```javascript
+  case "1":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<h1>" + c[1] + "</h1>"
+     return output;
+     break;
+    default:
+     output = "<h1 " + v[1] + ">" + c[1] + "</h1>"
+     return output;
+     break;
+   }
+```
 
-While making your changes, make sure you comment in your code, and that you commit graciously. Your commits will be reviewed by notmarkdown admins when you request to merge your branch with master. If your commit messages are not detailed, your merge will be terminated, though you will be invited to try again.
+### Pull Request
 
-Once you complete your changes, submit a pull request. The admins must approve it, and then you may merge with master. If you are rejected, feel free to keep trying!
+After you have completed your changes, it is time to create a pull request. In your fork, you can click the green "Pull Request" button. From here, it asks you to fill out a template, which you must do for the admins. After you have completed the steps, submit your request. This sends your fork to the admins for approval. If they approve it, it will automatically merge with master. 
 
-For your convenience we have including a review cheat sheet to let you know what you should do to have your changes be approved
+### You're Done!
 
-#### Review Cheatsheet
-
-- Your code must be commented well enough to be understood be even the newest developer. 
-
-- Your commits must be rich with information of your changes. 
-
-- You must not have modified any code except your own.
-
-- Your library name must be unique.
-
-### Adding to a Current Library
-
-#### Familiarize
-
-It is important that you familiarize yourself with the module you will be contributing to, as you must keep a uniform code style throughout the document. That means if the library is enclosing text in parenthesis, you may not change it to brackets.
-
-#### Edit and Add
-
-When you are editing, it is totally okay to make changes to part of the module that was written before you started working on it. Your goal is to make the library work smoothly and have the most functionality, and that can't always be achieved just by adding on. Just make sure to detail what you changed in your pull request, along with what you added.
-
-While writing, make sure you clearly comment in your code; someone may come and work on it after you, and they will have to know what is going on. Similarly, keep your commit messages clean and descriptive, so the admins know exactly what you did when approving the request. 
-
-Remember to respect the wishes of whoever wrote the library before you. If there are comments telling you to not change something, please acknowledge, and find another way to accomplish what you were going to do.
-
-#### Guidelines
-
-- Code must only edit text, and not interact with the outside page.
-
-- Code must be clearly described via commits.
-
-- Code must be encased in a function titled "parse()".
-
-- parse() May not be called from within the library, it is exclusively for the developer working with the module to call.
-
-- Project may be an npm or cdnjs module. If they are, you **must** provide a link back to the repository. You wrote the module, so you don't need to provide credit to us in the code.
-
-- For JavaScript projects, the input must come from an element with the id "nmd-in" and be outputted to "nmd-out".
-
-#### Submitting 
-
-To submit your code, you must first create a fork from the repository. This is a you-(and anyone else you let contribute)-independent branch where you can make any changes you want, without it affecting the overall project. 
-
-Once you open a fork, place your code inside the library you are editing's file inside the flavors directory. ***DO NOT*** delete any other files. We will wholeheartedly restrict you from contributing again.
-
-While making your changes, make sure you comment in your code, and that you commit graciously. Your commits will be reviewed by notmarkdown admins when you request to merge your branch with master. If your commit messages are not detailed, your merge will be terminated, though you will be invited to try again.
-
-Once you complete your changes, submit a pull request. The admins must approve it, and then you may merge with master. If you are rejected, feel free to keep trying!
-
-For your convenience we have including a review cheat sheet to let you know what you should do to have your changes be approved
-
-#### Review Cheatsheet
-
-- Your code must be commented well enough to be understood be even the newest developer. 
-
-- Your commits must be rich with information of your changes. 
-
-- You must not have modified any code except the library you are working on.
-
-- Your library name must be kept the same.
+Congratulations! You finished making your first open source contribution. We'd love if you starred the repository (to attract more contributors) or contributed again, to make it even better!
