@@ -2,7 +2,7 @@
 
 <img src="https://cdn.rawgit.com/ntrupin/notmarkdown/66618e7c/636B43E8-179D-40FB-8FF6-09DE7EA1096E.jpeg" width="50%">
 
-The multi-flavored markup language that isn't Markdown.
+The powerful markup language that isn't Markdown.
 
 ## What is it?
 
