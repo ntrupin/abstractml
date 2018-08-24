@@ -1,6 +1,4 @@
-# notmarkdown ![](https://img.shields.io/github/stars/ntrupin/notmarkdown.svg) ![](https://img.shields.io/github/forks/ntrupin/notmarkdown.svg) ![](https://img.shields.io/github/license/ntrupin/notmarkdown.svg) 
-
-[![Join the chat at https://gitter.im/notmd/Lobby](https://badges.gitter.im/notmd/Lobby.svg)](https://gitter.im/notmd/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# notmarkdown ![](https://img.shields.io/github/stars/ntrupin/notmarkdown.svg) ![](https://img.shields.io/github/forks/ntrupin/notmarkdown.svg) ![](https://img.shields.io/github/license/ntrupin/notmarkdown.svg) [![Join the chat at https://gitter.im/notmd/Lobby](https://badges.gitter.im/notmd/Lobby.svg)](https://gitter.im/notmd/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 <img src="https://cdn.rawgit.com/ntrupin/notmarkdown/66618e7c/636B43E8-179D-40FB-8FF6-09DE7EA1096E.jpeg" width="50%">
 
