@@ -56,11 +56,11 @@ And, here are links to all of our different libraries:
 
 #### Colored
 
-- Standard: ‘/{text}/‘
+- Standard: ‘/{color}-{text}/‘
 
-- Minty: colored/{text}/colored
+- Minty: colored/{color}-{text}/colored
 
-- Easy: col/{text}/col
+- Easy: col/{color}-{text}/col
 
 #### Linebreak
 
