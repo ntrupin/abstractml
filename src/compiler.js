@@ -206,6 +206,8 @@ function parse(cv) {
       return output;
       break;
     }
+    break;
+
    // Errors
    case undefined: 
    case null:
