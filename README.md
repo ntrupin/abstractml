@@ -22,7 +22,7 @@ JavaScript can be embedded in LineScript to interact with storage, the parsed HT
 
 ## Usage
 
-Section coming soon.
+See DOCS.md.
 
 ## Contributing
 
