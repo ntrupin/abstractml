@@ -9,8 +9,8 @@ To use LineScript for your webpage, you will need four files: the base.html file
 ```html
 <html id="whole">
  <body onload="build('MY_FILE')" id="line">
-  <script src="https://raw.githubusercontent.com/ntrupin/LineScript/master/src/compiler.js"></script>
-  <script src="https://raw.githubusercontent.com/ntrupin/LineScript/master/src/gate.js"></script>
+  <script src="compiler.js"></script>
+  <script src="gate.js"></script>
  <body>
 </html>
 ```
