@@ -93,6 +93,19 @@ function parse(cv) {
      return output;
      break;
     }
+  // Span
+  case "span":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<span>" + c[1] + "</span>"
+     return output;
+     break;
+    default:
+     output = "<span " + v[1] + ">" + c[1] + "</span>"
+     return output;
+     break;
+    }
    // Linebreak
    case "/br/":
     output + "<br>"
