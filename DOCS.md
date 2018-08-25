@@ -17,9 +17,9 @@ To use LineScript for your webpage, you will need four files: the base.html file
 
 You can rename the file anything you wish; It only matters that you keep the contents of the file the exact same. You can replace MY_FILE with the name of your .osls file (excluding the extension. That means you would write index.osls as index).
 
-- **compiler.js**: this script automatically executes on runtime (see how in the gate.js section), and compiles your .osls script into a valid HTML document to be displayed on the webpage.
+- **compiler.js**: this script automatically executes on runtime (see how in the gate.js section), and compiles your .osls script into a valid HTML document to be displayed on the webpage. You can get it [here](https://raw.githubusercontent.com/ntrupin/LineScript/master/src/compiler.js).
 
-- **gate.js**: this script bridges the gap between document and compiler. It requests and splits the .osls file and passes the contents to be parsed by the compiler. Once the compiler finished running, gate.js also renders the HTML on the webpage. Calling build('MY_FILE') from base.html is calling the default function from gate.js, telling it to start rendering the webpage.
+- **gate.js**: this script bridges the gap between document and compiler. It requests and splits the .osls file and passes the contents to be parsed by the compiler. Once the compiler finished running, gate.js also renders the HTML on the webpage. Calling build('MY_FILE') from base.html is calling the default function from gate.js, telling it to start rendering the webpage.  You can get it [here](https://raw.githubusercontent.com/ntrupin/LineScript/master/src/gate.js).
 
 - **MY_FILE.osls**: this is the file that you wrote, containing the LineScript code. You point to it from base.html (explained earlier) in order for it to be parsed and displayed. The .osls extension stands for *Open Source LineScript*, and is the identifier for LineScript files.
 
