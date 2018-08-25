@@ -20,6 +20,8 @@ For styling documents in LineScript, you can link to external style sheets (such
 
 JavaScript can be embedded in LineScript to interact with storage, the parsed HTML, servers, and more. LineScript also includes the ability to use JavaScript libraries such as [jQuery](https://jquery.com).
 
+However, LineScript does not support embedded style sheets or scripts. All CSS or JavaScript must be written inline or in a separate document.
+
 ## Usage
 
 See DOCS.md.
