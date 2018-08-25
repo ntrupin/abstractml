@@ -1,7 +1,7 @@
 function parse(cv) {
  c = cv.toString().split(" :: ")
  v = c[0].split(" -> ")
- switch(v[0]) {
+ switch(v[0].replace(/\s/g,'')) {
   case "h1":
    switch(v[1]) {
     case undefined:
@@ -117,13 +117,62 @@ function parse(cv) {
        return output;
        break;
      }
+    }
+   case "meta":
+    switch(v[1]) {
+     case undefined:
+     case null:
+      output = "<meta />"
+      return output;
+      break;
+     default:
+      output = "<meta " + v[1] + " />"
+      return output;
+      break;
    }
-   case ";; div": 
-    output + "<br>"
+   case "title":
+    output = "<title>" + c[1] + "</title>"
     return output;
     break;
-   default: 
-    output = c[1]
+   case "script":
+    switch(v[1]) {
+    case undefined:
+    case null:
+     switch(c[1]) {
+      case undefined:
+      case null:
+       output = "<div>"
+       return output;
+       break;
+      default:
+       output = "<div>" + c[1]
+       return output;
+       break;
+     }
+    default:
+     switch(c[1]) {
+      case undefined:
+      case null:
+       output = "<div " + v[1] + ">"
+       return output;
+       break;
+      default:
+       output = "<div " + v[1] + ">" + c[1]
+       return output;
+       break;
+     }
+    }
+   case "end":
+    switch(c[1]) {
+     case "div":
+      output = "</div>"
+      return output;
+      break;
+    }
+   case undefined: 
+   case null:
+   default:
+    output = "MISSING IDENTIFIERS"
     return output;
     break;
  }
