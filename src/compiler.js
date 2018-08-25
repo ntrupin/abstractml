@@ -206,12 +206,9 @@ function parse(cv) {
       return output;
       break;
     }
-    break;
-
    // Errors
    case undefined: 
    case null:
-   default:
     output = "MISSING IDENTIFIERS"
     return output;
     break;
