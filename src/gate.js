@@ -1,7 +1,7 @@
-function build() {
+function build(filename) {
  var xmlhttp;
  xmlhttp=new XMLHttpRequest();
- xmlhttp.open('GET', "./index.osls", false);
+ xmlhttp.open('GET', "./" + filename + ".osls", false);
  xmlhttp.send();
  x = xmlhttp.responseText
  y = x.split("\n")
