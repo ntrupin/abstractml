@@ -93,6 +93,14 @@ end :: div
 
 Nestable tags must always be closed by end :: TAG_NAME.
 
+#### Standalone Tags
+
+Standalone Tags are tags that do not accept any arguments or text, and only serve one purpose. The most familiar Standalone likely is 
+
+```html
+/br/
+```
+
 ### Scripts and Stylesheets
 
 For styling documents in LineScript, you can link to external style sheets (such as [Bootstrap](https://getbootstrap.com) or [Skeleton](https://getskeleton.com)), use inline CSS, or use your own custom style sheet. All function of CSS3 is allowed, and extensions such as WebKit are able to be used.
@@ -103,4 +111,168 @@ However, LineScript does not support embedded style sheets or scripts. All CSS o
 
 ### Code
 
-Coming Soon.
+In LineScript, you do not have to worry about writing in html, head, or body tags; base.html takes care of that for you. 
+
+The structure of the document, however, is in your control. The below documentation details every tag in the language.
+
+#### Heading 1
+
+```
+h1
+
+Can be Positive or Neutral
+
+Syntax (Positive): h1 :: This is a Heading!
+
+Syntax (Neutral): h1 -> argument="foo:bar" :: This is a Colored Heading!
+```
+
+#### Heading 2
+
+```
+h2
+
+Can be Positive or Neutral
+
+Syntax (Positive): h2 :: This is a Heading!
+
+Syntax (Neutral): h2 -> style="argument="foo:bar"" :: This is a Colored Heading!
+```
+
+#### Heading 3
+
+```
+h3
+
+Can be Positive or Neutral
+
+Syntax (Positive): h3 :: This is a Heading!
+
+Syntax (Neutral): h3 -> argument="foo:bar" :: This is a Colored Heading!
+```
+
+#### Heading 4
+
+```
+h4
+
+Can be Positive or Neutral
+
+Syntax (Positive): h4 :: This is a Heading!
+
+Syntax (Neutral): h4 -> argument="foo:bar" :: This is a Colored Heading!
+```
+
+#### Heading 5
+
+```
+h5
+
+Can be Positive or Neutral
+
+Syntax (Positive): h5 :: This is a Heading!
+
+Syntax (Neutral): h5 -> argument="foo:bar" :: This is a Colored Heading!
+```
+
+#### Heading 6
+
+```
+h6
+
+Can be Positive or Neutral
+
+Syntax (Positive): h6 :: This is a Heading!
+
+Syntax (Neutral): h6 -> argument="foo:bar" :: This is a Colored Heading!
+```
+
+#### Paragraph
+
+```
+p
+
+Can be Positive or Neutral
+
+Syntax (Positive): h1 :: This is a Heading!
+
+Syntax (Neutral): h1 -> argument="foo:bar" :: This is a Colored Heading!
+```
+
+#### Linebreak
+
+```
+br
+
+Standalone
+
+Syntax (Standalone): /br/
+```
+
+#### Meta
+
+```
+meta
+
+Negative
+
+Syntax (Negative): meta -> argument="foo:bar" ::
+```
+
+#### External Resource Link
+
+```
+link
+
+Negative
+
+Syntax (Negative): link -> argument="foo:bar" ::
+```
+
+#### Inline Style for Body Node
+
+```
+bodystyle
+
+Negative
+
+Syntax (Negative): bodystyle -> foo:bar ::
+```
+
+#### Page Title
+
+```
+title
+
+Positive
+
+Syntax (Positive): title :: Title
+```
+
+#### Div
+
+```
+div
+
+Always Nestable, overlaid with Standlone, Positive, Negative, or Neutral
+
+Syntax (Standalone): div ::
+
+Syntax (Positive): div :: Text
+
+Syntax (Negative): div -> argument="foo:bar" ::
+
+Syntax (Neutral): div -> argument="foo:bar" :: Text
+
+Closing: end :: div
+```
+
+#### Script Link
+
+```
+script
+
+Negative
+
+Syntax (Negative): script -> argument="foo:bar" ::
+```
