@@ -108,7 +108,7 @@ function parse(cv) {
     }
    // Linebreak
    case "/br/":
-    output + "<br>"
+    output = "<br>"
     return output;
     break;
    // Meta Tags
