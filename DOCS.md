@@ -93,6 +93,14 @@ end :: div
 
 Nestable tags must always be closed by end :: TAG_NAME.
 
+### Scripts and Stylesheets
+
+For styling documents in LineScript, you can link to external style sheets (such as [Bootstrap](https://getbootstrap.com) or [Skeleton](https://getskeleton.com)), use inline CSS, or use your own custom style sheet. All function of CSS3 is allowed, and extensions such as WebKit are able to be used.
+
+JavaScript can be embedded inline in LineScript to interact with storage, the parsed HTML, servers, and more. LineScript also includes the ability to use JavaScript libraries such as [jQuery](https://jquery.com).
+
+However, LineScript does not support embedded style sheets or scripts. All CSS or JavaScript must be written inline or in a separate document.
+
 ### Code
 
 Coming Soon.
