@@ -1,4 +1,4 @@
-# LineScript # LineScript ![](https://img.shields.io/github/stars/ntrupin/LineScript.svg) ![](https://img.shields.io/github/forks/ntrupin/LineScript.svg) ![](https://img.shields.io/github/license/ntrupin/LineScript.svg)
+# LineScript ![](https://img.shields.io/github/stars/ntrupin/LineScript.svg) ![](https://img.shields.io/github/forks/ntrupin/LineScript.svg) ![](https://img.shields.io/github/license/ntrupin/LineScript.svg)
 
 <img src="https://raw.githubusercontent.com/ntrupin/LineScript/master/531E7BA7-9CB6-4CFA-9BC5-31955FE15433.jpeg" width="100%" />
 
