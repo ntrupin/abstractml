@@ -110,14 +110,14 @@ function parse(cv) {
   case "img":
    switch(v[1]) {
     case undefined:
-      case null:
-       output = `<img href=${c[1]} />`
-       return output;
-       break;
-      default:
-       output = `<img href='${c[1]}' ${v[1]} />`
-       return output;
-       break;
+    case null:
+     output = `<img src='${c[1]}' />`
+     return output;
+     break;
+    default:
+     output = `<img src='${c[1]}' ${v[1]} />`
+     return output;
+     break;
     }
    // Linebreak
    case "/br/":
