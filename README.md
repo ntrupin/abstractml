@@ -4,6 +4,8 @@
 
 The open source markup language that complies into HTML at runtime, providing beautiful, easy syntax to create webpages.
 
+Like it? Leave us a star, it will help attract more visitors and contributors!
+
 ## Our Mission
 
 Our mission, as the creators of LineScript, is to help beginners make their first contribution to open source through clear-cut contribution guides, a welcoming community, and open codebase. 
