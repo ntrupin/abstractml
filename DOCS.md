@@ -194,9 +194,9 @@ p
 
 Can be Positive or Neutral
 
-Syntax (Positive): h1 :: This is a Heading!
+Syntax (Positive): p :: This is a Heading!
 
-Syntax (Neutral): h1 -> argument="foo:bar" :: This is a Colored Heading!
+Syntax (Neutral): p -> argument="foo:bar" :: This is a Colored Heading!
 ```
 
 #### Image
@@ -207,7 +207,7 @@ img
 Can be Positive or Neutral
 
 Syntax (Positive): img :: https://example.com/example.png
-Syntax (Neutral): h1 -> argument="foo:bar" :: https://example.com/example.png
+Syntax (Neutral): img -> argument="foo:bar" :: https://example.com/example.png
 ```
 
 #### Linebreak
@@ -276,6 +276,24 @@ Syntax (Negative): div -> argument="foo:bar" ::
 Syntax (Neutral): div -> argument="foo:bar" :: Text
 
 Closing: end :: div
+```
+
+#### Span
+
+```
+span
+
+Always Nestable, overlaid with Standlone, Positive, Negative, or Neutral
+
+Syntax (Standalone): span ::
+
+Syntax (Positive): span :: Text
+
+Syntax (Negative): span -> argument="foo:bar" ::
+
+Syntax (Neutral): span -> argument="foo:bar" :: Text
+
+Closing: end :: span
 ```
 
 #### Script Link
