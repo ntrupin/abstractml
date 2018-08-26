@@ -2,66 +2,67 @@
 
 Updates are descending from most recent.
 
-## 0.0.4 (@Mofiqul)
+## 0.0.4 (thanks, @Mofiqul)
+
+### Compiler Changes
 
 - Added abbr Tag
-
-- Added abbr Tag to documentation
-
 - Added Button Tag
-
-- Added Button Tag to documentation
-
 - Added Input Tag
-
-- Added Input Tag to documentation
-
 - Added a Tag
-
-- Added a tag to documentation
-
 - Added Textarea Tag
 
+### Documentation Changes
+
+- Added abbr Tag to documentation
+- Added Button Tag to documentation
+- Added Input Tag to documentation
+- Added a tag to documentation
 - Added Textarea Tag to Documentation
 
 ## 0.0.3
 
-- Added Span Tag to documentation (@ntrupin)
+### Compiler Changes
 
-- Fixed fatal error in Paragraph Tag (@ntrupin)
+- Added Nested and Positive capability to Span Tag (@ntrupin {LineScript})
+- Added img Tag (thanks, @Yamboy1)
 
-- Improved Span Tag (@ntrupin)
+### Bug Fixes
 
-- Added img Tag to documentation (@Yamboy1)
+- Fixed fatal error in Paragraph Tag (@ntrupin {LineScript})
 
-- Added img Tag (@Yamboy1)
+### Documentation Changes
 
-## 0.0.2 (@Yamboy1)
+- Added Span Tag to documentation (@ntrupin {LineScript})
+- Added img Tag to documentation (thanks, @Yamboy1)
 
-- Fixed documentation
+## 0.0.2 (thanks, @Yamboy1)
+
+### Compiler Changes
 
 - Changed compiler and gate file paths from definitive to relative
 
+### Documentation Changes
+
+- Fixed documentation
+
 ## 0.0.1
 
-- Added Span Tag (@jmona789)
+### Bug Fixes
 
-- Bug fixes (@ntrupin)
+- Bug fixes (@ntrupin {LineScript})
 
-## 0.0.0 (@ntrupin)
+### Compiler Changes
+
+- Added Span Tag (thanks, @jmona789)
+
+## 0.0.0 (@ntrupin {LineScript})
 
 - Created Compiler
-
 - Created gate
-
 - Created base
-
 - Created README
-
 - Created DOCS
-
 - Created ugly_yellow
-
 - Created CHANGELOG
-
 - Created templates
