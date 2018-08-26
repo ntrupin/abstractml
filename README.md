@@ -92,7 +92,7 @@ Or, you may also write your own function from scratch, and include your own spec
 
 #### Edit
 
-If you find a bug in a function, or just want to make it more practical or add on, you can edit nonexistent functions! This can be done by simply editing values in a function of adding more cases to it. The more cases in a function, the more powerful it is. For example, if you wanted to add styles to a "1" tag, you would change
+If you find a bug in a function, or just want to make it more practical or add on, you can edit existing functions! This can be done by simply editing values in a function of adding more cases to it. The more cases in a function, the more powerful it is. For example, if you wanted to add styles to a "1" tag, you would change
 
 **This**
 
