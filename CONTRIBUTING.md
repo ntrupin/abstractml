@@ -1,6 +1,6 @@
 ## Contributing
 
-Thanks to GitHub, it is very easy to contribute to open source. To make your first contribution, just follow the guide below.
+Thanks to GitHub, it is very easy to contribute to open source. To make your contribution, just follow the guide below.
 
 ### Familiarize
 
