@@ -8,9 +8,7 @@ Like it? Leave us a star, it will help attract more visitors and contributors!
 
 ## Our Mission
 
-Our mission, as the creators of LineScript, is to help beginners make their first contribution to open source through clear-cut contribution guides, a welcoming community, and open codebase. 
-
-It is specifically why we created the language: as a learning experience. It can be hard to start open source. There are millions of developers, millions of repositories, and incalculable lines of code written in dozens of languages. As a beginner, very little of how Git and open source work is known, and the majority of the code is far above the level of a someone just starting out. We know from experience that it is extremely challenging to start off in this world, and we want to make the experience of every new developer as easy as we can.
+Our mission is to provide a more clean and streamlined way to develop for the web. That means no more opening/closing tags, no more clumps of code, and no more unnecessary spacing throughout the document. LineScript provides clear-cut syntax and document structure that requires there to be no extra line breaks between statements, and that all statements follow a strict grammar structure.
 
 ## What is LineScript? 
 
@@ -131,4 +129,4 @@ After you have completed your changes, it is time to create a pull request. In y
 
 ### You're Done!
 
-Congratulations! You finished making your first open source contribution. We'd love if you starred the repository (to attract more contributors) or contributed again, to make it even better!
+Congratulations! You finished making your first open source contribution to LineScript! We'd love if you starred the repository (to attract more contributors) or contributed again, to make it even better!
