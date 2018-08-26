@@ -210,7 +210,6 @@ Syntax (Positive): img :: https://example.com/example.png
 Syntax (Neutral): h1 -> argument="foo:bar" :: https://example.com/example.png
 ```
 
-
 #### Linebreak
 
 ```
