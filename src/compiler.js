@@ -312,6 +312,11 @@ function parse(cv) {
       return output;
       break;
     }
+   // Accidental blank space
+   case "":
+    output = ""
+    return output;
+    break;
    // Errors
    case undefined: 
    case null:
