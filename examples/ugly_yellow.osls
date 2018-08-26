@@ -3,4 +3,4 @@ title :: Hello, World!
 div -> style="background-color:yellow" ::
  h1 :: This was written in LineScript!
  p -> onclick="alert('Hi!')" :: Click Me
-end :: div
+end :: div 
