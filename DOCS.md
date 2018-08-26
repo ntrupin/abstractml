@@ -199,6 +199,18 @@ Syntax (Positive): h1 :: This is a Heading!
 Syntax (Neutral): h1 -> argument="foo:bar" :: This is a Colored Heading!
 ```
 
+#### Image
+
+```
+p
+
+Can be Positive or Neutral
+
+Syntax (Positive): img :: https://example.com/example.png
+Syntax (Neutral): h1 -> argument="foo:bar" :: https://example.com/example.png
+```
+
+
 #### Linebreak
 
 ```
