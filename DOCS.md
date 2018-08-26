@@ -202,7 +202,7 @@ Syntax (Neutral): h1 -> argument="foo:bar" :: This is a Colored Heading!
 #### Image
 
 ```
-p
+img
 
 Can be Positive or Neutral
 
