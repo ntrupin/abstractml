@@ -106,6 +106,19 @@ function parse(cv) {
      return output;
      break;
     }
+  // Img
+  case "img":
+   switch(v[1]) {
+    case undefined:
+      case null:
+       output = `<img href=${c1} />`
+       return output;
+       break;
+      default:
+       output = `<img href='${c1}' ${v1} />`
+       return output;
+       break;
+    }
    // Linebreak
    case "/br/":
     output = "<br>"
