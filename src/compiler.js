@@ -111,11 +111,11 @@ function parse(cv) {
    switch(v[1]) {
     case undefined:
       case null:
-       output = `<img href=${c1} />`
+       output = `<img href=${c[1]} />`
        return output;
        break;
       default:
-       output = `<img href='${c1}' ${v1} />`
+       output = `<img href='${c[1]}' ${v[1]} />`
        return output;
        break;
     }
