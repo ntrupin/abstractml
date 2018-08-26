@@ -95,16 +95,32 @@ function parse(cv) {
     }
   // Span
   case "span":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<span>" + c[1] + "</span>"
-     return output;
-     break;
+    switch(v[1]) {
+     case undefined:
+     case null:
+      switch(c[1]) {
+       case undefined:
+       case null:
+        output = "<span>"
+        return output;
+        break;
+       default:
+        output = "<span>" + c[1]
+        return output;
+        break;
+      }
     default:
-     output = "<span " + v[1] + ">" + c[1] + "</span>"
-     return output;
-     break;
+     switch(c[1]) {
+      case undefined:
+      case null:
+       output = "<span " + v[1] + ">"
+       return output;
+       break;
+      default:
+       output = "<span " + v[1] + ">" + c[1]
+       return output;
+       break;
+     }
     }
   // Img
   case "img":
@@ -216,6 +232,10 @@ function parse(cv) {
     switch(c[1]) {
      case "div":
       output = "</div>"
+      return output;
+      break;
+     case "span":
+      output = "</span>"
       return output;
       break;
     }
