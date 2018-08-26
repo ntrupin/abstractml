@@ -1,5 +1,9 @@
 ## Docs
 
+This is the official LineScript documentation. 
+
+See a bug in the docs? Submit a [Pull Request](https://github.com/ntrupin/LineScript/pulls).
+
 ### Files
 
 To use LineScript for your webpage, you will need four files: the base.html file, links to compiler.js and gate.js, and a .osls file that you create yourself. Besides this, you may have your own CSS files, your own JavaScript files, and links to external CSS and JavaScript files.
@@ -207,6 +211,7 @@ img
 Can be Positive or Neutral
 
 Syntax (Positive): img :: https://example.com/example.png
+
 Syntax (Neutral): img -> argument="foo:bar" :: https://example.com/example.png
 ```
 
@@ -296,53 +301,60 @@ Syntax (Neutral): span -> argument="foo:bar" :: Text
 Closing: end :: span
 ```
 
-#### a
+#### Hyperlink
+
 ```
 a
 
-Positive
+Can be Positive or Neutral
 
-Syntax(Positive): a :: Text
+Syntax (Positive): a :: Text
 
-Syntax(Neutral): a -> argument="foo:bar" :: bar 
+Syntax (Neutral): a -> argument="foo:bar" :: Text
 ```
 
-#### input
+#### Input
+
 ```
 input
 
-Negative
+Can be Standalone or Negative
 
-Syntax(Negative): input
+Syntax (Standalone): input ::
 
-Syntax(Negative): input -> argument="foo:bar"
+Syntax (Negative): input -> argument="foo:bar" ::
 ```
 
-#### button
+#### Button
+
 ```
 button
 
-Can be Positive or Neutral
+Can be Positive, Negative, or Neutral
 
-Syntax(Positive): button :: Button
+Syntax (Positive): button :: Text
 
-Syntax(Negative): button -> argument="foo:bar" :: Submit
+Syntax (Negative): button -> argument="foo:bar" :: Text
 ```
 
-#### textarea
+#### Textarea
+
 ```
 textarea
 
-Can be Positive, Negative or Neutral
+Can be Standalone, Positive, Negative, or Neutral
 
-Syntax(Negative): textarea :: 
+Syntax (Standalone): textarea :: 
 
-Syntax(Positive): textarea :: Text
+Syntax (Positive): textarea :: Text
 
-Syntax(Neutral): textarea -> argument="foo:bar":: text 
+Syntax (Negative): textarea -> argument="foo:bar" ::
+
+Syntax (Neutral): textarea -> argument="foo:bar" :: text 
 ```
 
-#### abbr
+#### Abbreviation
+
 ```
 abbr
 
