@@ -8,6 +8,8 @@ Updates are descending from most recent.
 
 - Fixed fatal error in Paragraph Tag (@ntrupin)
 
+- Improved Span Tag (@ntrupin)
+
 - Added img Tag to documentation (@Yamboy1)
 
 - Added img Tag (@Yamboy1)
