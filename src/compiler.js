@@ -25,7 +25,7 @@ function parse(cv) {
      output = "<h2 " + v[1] + ">" + c[1] + "</h2>"
      return output;
      break;
-   }
+  }
   case "h3":
    switch(v[1]) {
     case undefined:
@@ -162,7 +162,67 @@ function parse(cv) {
        break;
      }
     }
-   case "end":
+  case "a":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<a>" + c[1] + "</a>"
+     return output;
+     break;
+    default:
+     output = "<a " + v[1] + ">" + c[1] + "</a>"
+     return output;
+     break;
+  }
+  case "button":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<button>" + c[1] + "</button>"
+     return output;
+     break;
+    default:
+     output = "<button " + v[1] + ">" + c[1] + "</button>"
+     return output;
+     break;
+  }
+  case "input":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<input/>"
+     return output;
+     break;
+    default:
+     output = "<input " + v[1] + "/>"
+     return output;
+     break;
+  }
+  case "textarea":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<textarea>" + c[1] + "</textarea>"
+     return output;
+     break;
+    default:
+     output = "<textarea " + v[1] + ">" + c[1] + "</textarea>"
+     return output;
+     break;
+  }
+  case "abbr":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = "<abbr>" + c[1] + "</abbr>"
+     return output;
+     break;
+    default:
+     output = "<abbr " + v[1] + ">" + c[1] + "</abbr>"
+     return output;
+     break;
+  }
+  case "end":
     switch(c[1]) {
      case "div":
       output = "</div>"
@@ -175,5 +235,7 @@ function parse(cv) {
     output = "MISSING IDENTIFIERS"
     return output;
     break;
- }
+  }
+   
+  
 }
