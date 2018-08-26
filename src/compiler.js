@@ -183,9 +183,17 @@ function parse(cv) {
      return output;
      break;
     default:
-     output = "<textarea " + v[1] + ">" + c[1] + "</textarea>"
-     return output;
-     break;
+     switch(c[1]) {
+      case null:
+      case undefined:
+       output = "<textarea " + v[1] + "></textarea>"
+       return output;
+       break;
+      default:
+       output = "<textarea " + v[1] + ">" + c[1] + "</textarea>"
+       return output;
+       break;
+     }
     }
   // Abbr
   case "abbr":
