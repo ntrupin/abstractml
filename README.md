@@ -8,7 +8,7 @@ Like it? Leave us a star, it will help attract more visitors and contributors!
 
 ## Our Mission
 
-Our mission is to provide a more clean and streamlined way to develop for the web. That means no more opening/closing tags, no more clumps of code, and no more unnecessary spacing throughout the document. LineScript provides clear-cut syntax and document structure that requires there to be no extra line breaks between statements, and that all statements follow a strict grammar structure.
+Our mission at LineScript is to provide a way to develop interfaces for the web that is cleaner and more user-friendly than HTML. That means we removed clumped code, ugly opening/closing tag combinations, and trying to squeeze attributes into tags. The LineScript compiler only allows for one tag to be on a line, and it must follow a strict grammar. This leads to more uniform code that is nicer to the developer.
 
 ## What is LineScript? 
 
@@ -28,7 +28,7 @@ See DOCS.md.
 
 ## Contributing
 
-Thanks to GitHub, it is very easy to contribute to open source. To make your first contribution, just follow the guide below.
+Thanks to GitHub, it is very easy to contribute to open source. To make your contribution, just follow the guide below.
 
 ### Familiarize
 
