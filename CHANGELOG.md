@@ -2,6 +2,28 @@
 
 Updates are descending from most recent.
 
+## 0.0.4 (@Mofiqul)
+
+- Added abbr Tag
+
+- Added abbr Tag to documentation
+
+- Added Button Tag
+
+- Added Button Tag to documentation
+
+- Added Input Tag
+
+- Added Input Tag to documentation
+
+- Added a Tag
+
+- Added a tag to documentation
+
+- Added Textarea Tag
+
+- Added Textarea Tag to Documentation
+
 ## 0.0.3
 
 - Added Span Tag to documentation (@ntrupin)
