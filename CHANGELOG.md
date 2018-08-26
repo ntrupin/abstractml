@@ -14,12 +14,32 @@ Updates are descending from most recent.
 
 - Added img Tag (@Yamboy1)
 
-## 0.0.2
+## 0.0.2 (@Yamboy1)
 
-- Fixed documentation (@Yamboy1)
+- Fixed documentation
 
-- Changed compiler and gate file paths from definitive to relative (@Yamboy1)
+- Changed compiler and gate file paths from definitive to relative
 
 ## 0.0.1
 
 - Added Span Tag (@jmona789)
+
+- Bug fixes (@ntrupin)
+
+## 0.0.0 (@ntrupin)
+
+- Created Compiler
+
+- Created gate
+
+- Created base
+
+- Created README
+
+- Created DOCS
+
+- Created ugly_yellow
+
+- Created CHANGELOG
+
+- Created templates
