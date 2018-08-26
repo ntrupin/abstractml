@@ -296,6 +296,63 @@ Syntax (Neutral): span -> argument="foo:bar" :: Text
 Closing: end :: span
 ```
 
+#### a
+```
+a
+
+Positive
+
+Syntax(Positive): a :: Text
+
+Syntax(Neutral): a -> argument="foo:bar" :: bar 
+```
+
+#### input
+```
+input
+
+Negative
+
+Syntax(Negative): input
+
+Syntax(Negative): input -> argument="foo:bar"
+```
+
+#### button
+```
+button
+
+Can be Positive or Neutral
+
+Syntax(Positive): button :: Button
+
+Syntax(Negative): button -> argument="foo:bar" :: Submit
+```
+
+#### textarea
+```
+textarea
+
+Can be Positive, Negative or Neutral
+
+Syntax(Negative): textarea :: 
+
+Syntax(Positive): textarea :: Text
+
+Syntax(Neutral): textarea -> argument="foo:bar":: text 
+```
+
+#### abbr
+```
+abbr
+
+Can be Positive or Neutral
+
+Syntax(Positive): abbr :: Text
+
+Syntax(Negative): abbr -> argument="foo:bar" :: Text
+```
+
 #### Script Link
 
 ```
