@@ -139,7 +139,7 @@ function parse(cv) {
       link = document.createElement("link")
       link = document.getElementsByTagName("head")[0].appendChild(link)
       link.rel = v[1]
-      link.href = v[1]
+      link.href = c[1]
       return output;
       break;
     } 
