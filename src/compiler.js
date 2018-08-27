@@ -1,99 +1,30 @@
 function parse(cv) {
  c = cv.toString().split(" :: ")
  v = c[0].split(" -> ")
- switch(v[0].replace(/\s/g,'')) {
-  // Heading 1
-  case "h1":
+ tagname = v[0].replace(/\s/g,'')
+ switch(tagname) {
+  case "h1":// Heading 1
+  case "h2":// Heading 2
+  case "h3":// Heading 3
+  case "h4":// Heading 4
+  case "h5":// Heading 5
+  case "h6":// Heading 6
+  case "p":// Paragraph
+  case "a":
+  case "abbr":
+  case "button":
    switch(v[1]) {
     case undefined:
     case null:
-     output = "<h1>" + c[1] + "</h1>"
+     output = `<${tagname}>${c[1]}</${tagname}>`
      return output;
      break;
     default:
-     output = "<h1 " + v[1] + ">" + c[1] + "</h1>"
+     output = `<${tagname}>${v[1]}>${c[1]}</${tagname}>`
      return output;
      break;
    }
-  // Heading 2
-  case "h2":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h2>" + c[1] + "</h2>"
-     return output;
-     break;
-    default:
-     output = "<h2 " + v[1] + ">" + c[1] + "</h2>"
-     return output;
-     break;
-   }
-  // Heading 3
-  case "h3":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h3>" + c[1] + "</h3>"
-     return output;
-     break;
-    default:
-     output = "<h3 " + v[1] + ">" + c[1] + "</h3>"
-     return output;
-     break;
-   }
-  // Heading 4
-  case "h4":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h4>" + c[1] + "</h4>"
-     return output;
-     break;
-    default:
-     output = "<h4 " + v[1] + ">" + c[1] + "</h4>"
-     return output;
-     break;
-   }
-  // Heading 5
-  case "h5":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h5>" + c[1] + "</h5>"
-     return output;
-     break;
-    default:
-     output = "<h5 " + v[1] + ">" + c[1] + "</h5>"
-     return output;
-     break;
-   }
-  // Heading 6
-  case "h6":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h6>" + c[1] + "</h6>"
-     return output;
-     break;
-    default:
-     output = "<h6 " + v[1] + ">" + c[1] + "</h6>"
-     return output;
-     break;
-   }
-  // Paragraph
-  case "p":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<p>" + c[1] + "</p>"
-     return output;
-     break;
-    default:
-     output = "<p " + v[1] + ">" + c[1] + "</p>"
-     return output;
-     break;
-    }
-  // Span
+  case "div":
   case "span":
     switch(v[1]) {
      case undefined:
@@ -101,11 +32,11 @@ function parse(cv) {
       switch(c[1]) {
        case undefined:
        case null:
-        output = "<span>"
+        output = `<${tagname}>`
         return output;
         break;
        default:
-        output = "<span>" + c[1]
+        output = `<${tagname}>${c[1]}`
         return output;
         break;
       }
@@ -113,11 +44,11 @@ function parse(cv) {
      switch(c[1]) {
       case undefined:
       case null:
-       output = "<span " + v[1] + ">"
+       output = `<${tagname} ${v[1]}>`
        return output;
        break;
       default:
-       output = "<span " + v[1] + ">" + c[1]
+       output = `<${tagname} ${v[1]}>${c[1]}`
        return output;
        break;
      }
@@ -132,32 +63,6 @@ function parse(cv) {
      break;
     default:
      output = `<img src='${c[1]}' ${v[1]} />`
-     return output;
-     break;
-    }
-  // a 
-  case "a":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = `<a>${c[1]}</a>`
-     return output;
-     break;
-    default:
-     output = `<a ${v[1]}>${c[1]}</a>`
-     return output;
-     break;
-    }
-  // Button
-  case "button":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = `<button>${c[1]}</button>`
-     return output;
-     break;
-    default:
-     output = `<button ${v[1]}>${c[1]}</button>`
      return output;
      break;
     }
@@ -195,19 +100,6 @@ function parse(cv) {
        break;
      }
     }
-  // Abbr
-  case "abbr":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<abbr>" + c[1] + "</abbr>"
-     return output;
-     break;
-    default:
-     output = `<abbr ${v[1]}>${c[1]}</abbr>`
-     return output;
-     break;
-    }
    // Linebreak
    case "/br/":
     output = "<br>"
@@ -240,6 +132,7 @@ function parse(cv) {
       break;
      default:
       output = ""
+      link = document.getElementsByTagName("head")[0].appendChild("link")
       link.rel = v[1]
       link.href = v[1]
       return output;
@@ -264,35 +157,6 @@ function parse(cv) {
     output = "<title>" + c[1] + "</title>"
     return output;
     break;
-   // Div
-   case "div":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      switch(c[1]) {
-       case undefined:
-       case null:
-        output = "<div>"
-        return output;
-        break;
-       default:
-        output = "<div>" + c[1]
-        return output;
-        break;
-      }
-    default:
-     switch(c[1]) {
-      case undefined:
-      case null:
-       output = "<div " + v[1] + ">"
-       return output;
-       break;
-      default:
-       output = "<div " + v[1] + ">" + c[1]
-       return output;
-       break;
-     }
-    }
    // Script (External)
    case "script":
     switch(v[1]) {
