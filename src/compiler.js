@@ -16,12 +16,10 @@ function parse(cv) {
    switch(v[1]) {
     case undefined:
     case null:
-     output = `<${tagname}>${c[1]}</${tagname}>`
-     return output;
+     return `<${tagname}>${c[1]}</${tagname}>`;
      break;
     default:
-     output = `<${tagname} ${v[1]}>${c[1]}</${tagname}>`
-     return output;
+     return `<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
      break;
    }
   case "div":
@@ -32,24 +30,20 @@ function parse(cv) {
       switch(c[1]) {
        case undefined:
        case null:
-        output = `<${tagname}>`
-        return output;
+        return `<${tagname}>`;
         break;
        default:
-        output = `<${tagname}>${c[1]}`
-        return output;
+        return `<${tagname}>${c[1]}`;
         break;
       }
     default:
      switch(c[1]) {
       case undefined:
       case null:
-       output = `<${tagname} ${v[1]}>`
-       return output;
+       return `<${tagname} ${v[1]}>`;
        break;
       default:
-       output = `<${tagname} ${v[1]}>${c[1]}`
-       return output;
+       return `<${tagname} ${v[1]}>${c[1]}`;
        break;
      }
     }
@@ -58,12 +52,10 @@ function parse(cv) {
    switch(v[1]) {
     case undefined:
     case null:
-     output = `<${tagname} src='${c[1]}' />`
-     return output;
+     return `<${tagname} src='${c[1]}' />`;
      break;
     default:
-     output = `<${tagname} src='${c[1]}' ${v[1]} />`
-     return output;
+     return `<${tagname} src='${c[1]}' ${v[1]} />`;
      break;
     }
   // Input
@@ -71,12 +63,10 @@ function parse(cv) {
    switch(v[1]) {
     case undefined:
     case null:
-     output = `<${tagname}/>`
-     return output;
+     return `<${tagname}/>`;
      break;
     default:
-     output = `<${tagname} ${v[1]}/>`
-     return output;
+     return `<${tagname} ${v[1]}/>`;
      break;
     }
   // Textarea
@@ -84,19 +74,16 @@ function parse(cv) {
    switch(v[1]) {
     case undefined:
     case null:
-     output = `<${tagname}>${c[1]}</${tagname}>`
-     return output;
+     return `<${tagname}>${c[1]}</${tagname}>`;
      break;
     default:
      switch(c[1]) {
       case null:
       case undefined:
-       output = `<${tagname} ${v[1]}></${tagname}>`
-       return output;
+       return `<${tagname} ${v[1]}></${tagname}>`;
        break;
-      default:
-       output = `<${tagname} ${v[1]}>${c[1]}</${tagname}>`
-       return output;
+      default: 
+       return `<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
        break;
      }
     }
@@ -112,16 +99,14 @@ function parse(cv) {
      case null:
       meta = document.createElement("meta")
       meta = document.getElementsByTagName("head")[0].appendChild(meta)
-      output = ""
-      return output;
+      return "";
       break;
      default:
       meta = document.createElement("meta")
       meta = document.getElementsByTagName("head")[0].appendChild(meta)
       meta.name = v[1]
       meta.content = c[1]
-      output = ""
-      return output;
+      return "";
       break;
     }
    // External Resource Links
@@ -129,18 +114,16 @@ function parse(cv) {
     switch(v[1]) {
      case undefined:
      case null:
-      output = ""
       link = document.createElement("link")
       link = document.getElementsByTagName("head")[0].appendChild(link)
-      return output;
+      return "";
       break;
      default:
-      output = ""
       link = document.createElement("link")
       link = document.getElementsByTagName("head")[0].appendChild(link)
       link.rel = v[1]
       link.href = c[1]
-      return output;
+      return "";
       break;
     } 
    // Style for Body
@@ -152,15 +135,13 @@ function parse(cv) {
       return output;
       break;
      default:
-      output = ""
       document.getElementsByTagName("body")[0].style = v[1]
-      return output;
+      return "";
       break;
     }
    // Page Title
    case "title":
-    output = `<${tagname}>${c[1]}</${tagname}>`
-    return output;
+    return `<${tagname}>${c[1]}</${tagname}>`;
     break;
    // Script (External)
    case "script":
@@ -171,48 +152,40 @@ function parse(cv) {
       return output;
       break;
      default:
-      output = `<${tagname} ${v[1]} /></${tagname}>`
-      return output;
+      return `<${tagname} ${v[1]} /></${tagname}>`;
       break;
    }
   case "center":
    switch(v[1]) {
     case undefined:
     case null:
-     output = `<${tagname}>`
-     return output;
+     return `<${tagname}>`;
      break;
     default:
-     output = `<${tagname} ${v[1]}>`
-     return output;
+     return `<${tagname} ${v[1]}>`;
      break;
    }
    // Section Closer
    case "end":
     switch(c[1]) {
      case "div":
-      output = "</div>"
-      return output;
+      return `</div>`;
       break;
      case "span":
-      output = "</span>"
-      return output;
+      return `</span>`;
       break;
      case "center":
-      output = "</center>"
-      return output;
+      return `</center>`;
       break;
     }
    // Accidental blank space
    case "":
-    output = ""
-    return output;
+    return "";
     break;
    // Errors
    case undefined: 
    case null:
-    output = "Invalid Tag"
-    return output;
+    return "Invalid Syntax";
     break;
  }
 }

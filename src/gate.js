@@ -7,7 +7,7 @@ function build(filename) {
  y = x.split("\n")
  it = "";
  y.forEach(function(ele) {
-  parse(ele)
+  output = parse(ele)
   console.log(output)
   it = it + output
   console.log(it)
