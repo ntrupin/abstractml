@@ -175,6 +175,18 @@ function parse(cv) {
       return output;
       break;
    }
+  case "center":
+   switch(v[1]) {
+    case undefined:
+    case null:
+     output = `<${tagname}>`
+     return output;
+     break;
+    default:
+     output = `<${tagname} ${v[1]}>`
+     return output;
+     break;
+   }
    // Section Closer
    case "end":
     switch(c[1]) {
@@ -184,6 +196,10 @@ function parse(cv) {
       break;
      case "span":
       output = "</span>"
+      return output;
+      break;
+     case "center":
+      output = "</center>"
       return output;
       break;
     }
