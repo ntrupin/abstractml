@@ -241,7 +241,7 @@ function parse(cv) {
      default:
       output = ""
       link.rel = v[1]
-      link.src = v[1]
+      link.href = v[1]
       return output;
       break;
     } 
