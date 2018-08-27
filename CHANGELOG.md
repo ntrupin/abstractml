@@ -2,6 +2,19 @@
 
 Updates are descending from most recent.
 
+## 0.1.1 (@ntrupin {LineScript})
+
+### Bug Fixes
+
+- Fixed a bug where the Meta Tag couldn't show viewport data
+
+## 0.1.0
+
+### Compiler Changes
+
+- **-breaking change-** Slashed over 100 lines of code from the compiler to make it more concise (blueprint: @Yamboy1 ; execution: @ntrupin {LineScript})
+- **-breaking change-** Converted the compiler from string pasting to template literals (blueprint: @Yamboy1 ; execution: @ntrupin {LineScript})
+
 ## 0.0.4 (thanks, @Mofiqul)
 
 ### Compiler Changes
