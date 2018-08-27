@@ -218,11 +218,14 @@ function parse(cv) {
     switch(v[1]) {
      case undefined:
      case null:
-      output = "<meta />"
+      output = ""
+      meta = document.getElementsByTagName("head")[0].appendChild("meta")
       return output;
       break;
      default:
-      output = "<meta " + v[1] + " />"
+      output = ""
+      meta = document.getElementsByTagName("head")[0].appendChild("meta")
+      meta[v[1]] = c[1]
       return output;
       break;
     }
@@ -231,11 +234,14 @@ function parse(cv) {
     switch(v[1]) {
      case undefined:
      case null:
-      output = "<link />"
+      output = ""
+      link = document.getElementsByTagName("head")[0].appendChild("link")
       return output;
       break;
      default:
-      output = "<link " + v[1] + " />"
+      output = ""
+      link.rel = v[1]
+      link.src = v[1]
       return output;
       break;
     } 
