@@ -232,7 +232,7 @@ meta
 
 Negative
 
-Syntax (Negative): meta -> argument="foo:bar" ::
+Syntax (Negative): meta -> argument :: arg_value
 ```
 
 #### External Resource Link
