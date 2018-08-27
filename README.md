@@ -8,7 +8,7 @@ Like it? Leave us a star, it will help attract more visitors and contributors!
 
 ## Our Mission
 
-Primarily, our mission at LineScript is to help beginners and experts alike make their first contribtion, and and any that follow, to open source, and to find their place in the vast community. To do so, we created clear-cut contribution guides and examples, created rich documentation, have formulated a welcoming community, and are always around ourselves to lend a helping hand.
+Primarily, our mission at LineScript is to help beginners and experts alike make their first contribution, and any that follow, to open source, and to find their place in the vast community. To do so, we created clear-cut contribution guides and examples, created rich documentation, have formulated a welcoming community, and are always around ourselves to lend a helping hand.
 
 Secondarily, our mission at LineScript is to provide a way to develop interfaces for the web that is cleaner and more user-friendly than HTML. That means we removed clumped code, ugly opening/closing tag combinations, and trying to squeeze attributes into tags. The LineScript compiler only allows for one tag to be on a line, and it must follow a strict grammar. This leads to more uniform code that is nicer to the developer.
 
