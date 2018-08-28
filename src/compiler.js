@@ -13,158 +13,71 @@ function parse(cv) {
   case "a":
   case "abbr":
   case "button":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     return `<${tagname}>${c[1]}</${tagname}>`;
-     break;
-    default:
-     return `<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
-     break;
-   }
+   return stripEmpty`<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
+   break;
+
   case "div":
   case "span":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      switch(c[1]) {
-       case undefined:
-       case null:
-        return `<${tagname}>`;
-        break;
-       default:
-        return `<${tagname}>${c[1]}`;
-        break;
-      }
-    default:
-     switch(c[1]) {
-      case undefined:
-      case null:
-       return `<${tagname} ${v[1]}>`;
-       break;
-      default:
-       return `<${tagname} ${v[1]}>${c[1]}`;
-       break;
-     }
-    }
+   return stripEmpty`<${tagname} ${v[1]}>${c[1]}`;
+   break;
+
   // Img
   case "img":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     return `<${tagname} src='${c[1]}' />`;
-     break;
-    default:
-     return `<${tagname} src='${c[1]}' ${v[1]} />`;
-     break;
-    }
+   return stripEmpty`<${tagname} src='${c[1]}' ${v[1]} />`;
+   break;
+
   // Input
   case "input":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     return `<${tagname}/>`;
-     break;
-    default:
-     return `<${tagname} ${v[1]}/>`;
-     break;
-    }
+   return stripEmpty`<${tagname} ${v[1]}/>`;
+   break;
+
   // Textarea
   case "textarea":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     return `<${tagname}>${c[1]}</${tagname}>`;
+     return stripEmpty`<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
      break;
-    default:
-     switch(c[1]) {
-      case null:
-      case undefined:
-       return `<${tagname} ${v[1]}></${tagname}>`;
-       break;
-      default: 
-       return `<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
-       break;
-     }
-    }
+
    // Linebreak
    case "/br/":
-    output = "<br>"
-    return output;
+    return "<br>"
     break;
+
    // Meta Tags
    case "meta":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      meta = document.createElement("meta")
-      meta = document.getElementsByTagName("head")[0].appendChild(meta)
-      return "";
-      break;
-     default:
-      meta = document.createElement("meta")
-      meta = document.getElementsByTagName("head")[0].appendChild(meta)
-      meta.name = v[1]
-      meta.content = c[1]
-      return "";
-      break;
-    }
+    meta = document.createElement("meta");
+    meta = document.getElementsByTagName("head")[0].appendChild(meta);
+    meta.name = stripEmpty`${v[1]}`;
+    meta.content = stripEmpty`${c[1]}`;
+    return "";
+    break;
+
    // External Resource Links
    case "link":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      link = document.createElement("link")
-      link = document.getElementsByTagName("head")[0].appendChild(link)
-      return "";
-      break;
-     default:
-      link = document.createElement("link")
-      link = document.getElementsByTagName("head")[0].appendChild(link)
-      link.rel = v[1]
-      link.href = c[1]
-      return "";
-      break;
-    } 
+    link = document.createElement("link")
+    link = document.getElementsByTagName("head")[0].appendChild(link)
+    link.rel = stripEmpty`${v[1]}`
+    link.href = stripEmpty`${c[1]}`
+    return "";
+    break;
+     //
    // Style for Body
    case "bodystyle":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      output = ""
-      return output;
-      break;
-     default:
-      document.getElementsByTagName("body")[0].style = v[1]
-      return "";
-      break;
-    }
+    document.getElementsByTagName("body")[0].style = stripEmpty`${v[1]}`
+    return "";
+    break;
+
    // Page Title
    case "title":
-    return `<${tagname}>${c[1]}</${tagname}>`;
+    return stripEmpty`<${tagname}>${c[1]}</${tagname}>`;
     break;
    // Script (External)
    case "script":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      output = `<${tagname}></${tagname}>`
-      return output;
-      break;
-     default:
-      return `<${tagname} ${v[1]} /></${tagname}>`;
-      break;
-   }
+    return stripEmpty`<${tagname} ${v[1]}></${tagname}>`;
+    break;
+
   case "center":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     return `<${tagname}>`;
-     break;
-    default:
-     return `<${tagname} ${v[1]}>`;
-     break;
-   }
+   return stripEmpty`<${tagname} ${v[1]}>`;
+   break;
+
    // Section Closer
    case "end":
     switch(c[1]) {
@@ -178,6 +91,7 @@ function parse(cv) {
       return `</center>`;
       break;
     }
+
    // Accidental blank space
    case "":
     return "";
@@ -188,4 +102,17 @@ function parse(cv) {
     return "Invalid Syntax";
     break;
  }
+}
+
+function stripEmpty (stringsArg,...inputsArg) {
+ let str = "";
+ let strings = Array.from(stringsArg);
+ let inputs = Array.from(inputsArg);
+ while (strings.length || inputs.length) {
+  const string = strings.shift();
+  str += string!=null?string:"";
+  const input = inputs.shift();
+  str += input!=null?input:"";
+ }
+  return str;
 }
