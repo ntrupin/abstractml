@@ -7,6 +7,7 @@ Updates are descending from most recent.
 ### Bug Fixes
 
 - Fixed a bug where the Meta Tag couldn't show viewport data
+- Removed Output identifiers. Programmers don't like global variables used that way.
 
 ## 0.1.0
 
