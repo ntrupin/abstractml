@@ -14,7 +14,7 @@ Secondarily, our mission at LineScript is to provide a way to develop interfaces
 
 ## The Problem
 
-Modern web development (HTML/CSS/JS), though wonderfully functional and powerful, could be quite ugly to look at, and hard to navigate and edit, one there was a few dozen lines of code. These pages did not look like good code (bad for your personal image, and your portfolio) and could be quite hard to continue work on.
+Modern web development (HTML/CSS/JS), though wonderfully functional and powerful, could be quite ugly to look at, and hard to navigate and edit, once there was a few dozen lines of code. These pages did not look like good writing (bad for your personal image, and your portfolio) and could be quite hard to continue work on.
 
 ## Our Goals
 
