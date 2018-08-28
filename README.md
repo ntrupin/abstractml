@@ -4,7 +4,7 @@
 
 The open source markup language that complies into HTML at runtime, providing beautiful, easy syntax to create webpages.
 
-Like it? Leave us a star, it will help attract more visitors and contributors!
+Like it? Leave us a star, it will help attract more visitors and contributors! 
 
 ## Our Mission
 
@@ -12,11 +12,23 @@ Primarily, our mission at LineScript is to help beginners and experts alike make
 
 Secondarily, our mission at LineScript is to provide a way to develop interfaces for the web that is cleaner and more user-friendly than HTML. That means we removed clumped code, ugly opening/closing tag combinations, and trying to squeeze attributes into tags. The LineScript compiler only allows for one tag to be on a line, and it must follow a strict grammar. This leads to more uniform code that is nicer to the developer.
 
+## The Problem
+
+Modern web development (HTML/CSS/JS), though wonderfully functional and powerful, could be quite ugly to look at, and hard to navigate and edit, one there was a few dozen lines of code. These pages did not look like good code (bad for your personal image, and your portfolio) and could be quite hard to continue work on.
+
+## Our Goals
+
+- Provide a vocabulary similar to HTML
+- Create a strict grammar to enforce clean code
+- Maintain a simple, powerful syntax to provide maximum functionality with a minimal learning curve
+
 ## What is LineScript? 
 
 LineScript is a compiled programming language that is written in statements broken up by line to represent the page structure. It is compiled into a valid HTML document at runtime using the LineCompiler, and can be used to create real webpages. 
 
-The structure of the document is inspired by a combination of [Elm](https://elm-lang.org) and [Haskell](https://haskell.org), while the tag names are close alterations of HTML. This leads to extremely clean code that is familiar to anyone who has developed for the web, making LineScript the perfect beginner language.
+The structure of the document is inspired by a combination of [Elm](https://elm-lang.org) and [Haskell](https://haskell.org), while the tag names are close alterations of HTML. This leads to extremely clean code that is familiar to anyone who has developed for the web, making LineScript the perfect beginner and expert language.
+
+## CSS/JS Capabilities
 
 For styling documents in LineScript, you can link to external style sheets (such as [Bootstrap](https://getbootstrap.com) or [Skeleton](https://getskeleton.com)), use inline CSS, or use your own custom style sheet. All function of CSS3 is allowed, and extensions such as WebKit are able to be used.
 
