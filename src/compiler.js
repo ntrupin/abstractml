@@ -1,7 +1,8 @@
 function parse(cv) {
- c = cv.toString().split(" :: ")
- v = c[0].split(" -> ")
- tagname = v[0].replace(/\s/g,'')
+ let c = cv.toString().split(" :: ");
+ let v = c[0].split(" -> ");
+ let args = parse_attributes(v[1]);
+ let tagname = v[0].replace(/\s/g,'');
  switch(tagname) {
   case "h1":// Heading 1
   case "h2":// Heading 2
@@ -82,7 +83,7 @@ function parse(cv) {
       case undefined:
        return `<${tagname} ${v[1]}></${tagname}>`;
        break;
-      default: 
+      default:
        return `<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
        break;
      }
@@ -125,7 +126,7 @@ function parse(cv) {
       link.href = c[1]
       return "";
       break;
-    } 
+    }
    // Style for Body
    case "bodystyle":
     switch(v[1]) {
@@ -155,6 +156,14 @@ function parse(cv) {
       return `<${tagname} ${v[1]} /></${tagname}>`;
       break;
    }
+   // iframe
+  case "iframe":
+      let osls_src="";
+      if(args.hasOwnProperty("osls")){
+          osls_src = encode_html(build_osls(args["osls"]))
+      }
+      return `<${tagname} ${v[1]} srcdoc="${osls_src}" >${c[1]}</${tagname}>`;
+      break;
   case "center":
    switch(v[1]) {
     case undefined:
@@ -183,9 +192,33 @@ function parse(cv) {
     return "";
     break;
    // Errors
-   case undefined: 
+   case undefined:
    case null:
     return "Invalid Syntax";
     break;
  }
+}
+
+function parse_attributes(str) {
+    var regex = /(\w*) *= *((['"])?((\\\3|[^\3])*?)\3|(\w+))/g,
+        attr = {},
+        match;
+    while(match = regex.exec(str)) {
+        attr[match[1]] = match[2].substring(1, match[2].length-1);
+    }
+    return attr;
+}
+
+function encode_html(html){
+    var __entityMap = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+    };
+    return html.replace(/[&<>"'`\/]/g, function (s) {
+        return __entityMap[s];
+    });
 }
