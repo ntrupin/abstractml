@@ -28,6 +28,40 @@ LineScript is a compiled programming language that is written in statements brok
 
 The structure of the document is inspired by a combination of [Elm](https://elm-lang.org) and [Haskell](https://haskell.org), while the tag names are close alterations of HTML. This leads to extremely clean code that is familiar to anyone who has developed for the web, making LineScript the perfect beginner and expert language.
 
+## Why LineScript?
+
+We believe that you should use LineScript because it provides a crisp, clean alternative to boring old HTML. What could be done in HTML with this:
+
+```html
+<html> 
+  <head>  
+    <title>Hello, world!</title>  
+    <meta name="author" content="Me!" />  
+    <link rel="stylesheet" href="styles.css" /> 
+  </head> 
+  <body>  
+    <div style="background-color:yellow">   
+      <h1>This was written in HTML!</h1>   
+      <p onclick="alert('Hi!')">Click me!</p>  
+    </div> 
+  </body>
+</html>
+```
+
+Can easily be written in LineScript like this:
+
+```
+title :: Hello, world!
+meta -> author :: Me! 
+link -> stylesheet :: styles.css
+div -> style="background-color:yellow" ::  
+  h1 :: This was written in LineScript! 
+  p onclick="alert('Hi!')" :: Click me!
+end :: div
+```
+
+Using LineScript's Runtime Compiler, the LineScript example displays the same exact output as the HTML example... and the developer wrote half as much code! Also, the LineScript part looks so much neater, don't you think? Writing LineScript is much nicer than HTML, and it doesn't require as much effort to write. So, why LineScript? Because it is shorter, easier, and cleaner.
+
 ## CSS/JS Capabilities
 
 For styling documents in LineScript, you can link to external style sheets (such as [Bootstrap](https://getbootstrap.com) or [Skeleton](https://getskeleton.com)), use inline CSS, or use your own custom style sheet. All function of CSS3 is allowed, and extensions such as WebKit are able to be used.
