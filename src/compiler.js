@@ -159,10 +159,10 @@ function parse(cv) {
    // iframe
   case "iframe":
       let osls_src="";
-      if(args.hasOwnProperty("osls")){
-          osls_src = encode_html(build_osls(args["osls"]))
+      if(args.hasOwnProperty("osls") && args["osls"]){
+          osls_src = encode_html(build(args["osls"]))
       }
-      return `<${tagname} ${v[1]} srcdoc="${osls_src}" >${c[1]}</${tagname}>`;
+      return `<${tagname} ${v[1]} ${osls_src?"srcdoc='"+osls_src+"'":""} >${c[1]}</${tagname}>`;
       break;
   case "center":
    switch(v[1]) {

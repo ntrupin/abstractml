@@ -1,0 +1,21 @@
+<html>
+<body onload="auto_build_osls()">
+
+<script src="../src/compiler.js"></script>
+<script src="../src/gate.js"></script>
+
+<script type="text/osls">
+    meta -> charset="utf-8" ::
+    title :: Hello, World!
+    div -> style="background-color:yellow" ::
+     h1 :: This was written in LineScript!
+     p -> onclick="alert('Hi!')" :: Click Me
+    end :: div
+</script>
+
+<script type="text/osls">
+    iframe -> osls="../examples/img_example" width="500" height="900" src="http://sudo-beer.com" :: iframe not supported
+</script>
+
+</body>
+</html>
