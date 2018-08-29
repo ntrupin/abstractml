@@ -2,12 +2,19 @@
 
 Updates are descending from most recent.
 
+## 0.1.2
+
+### Compiler Changes
+
+- **-breaking change-** Rerouted the compiler's parsing process and greatly reduced pageload speed (thanks, @Yamboy1)
+- Made the compiler code prettier (@ntrupin {LineScript})
+
 ## 0.1.1 (@ntrupin {LineScript})
 
 ### Bug Fixes
 
 - Fixed a bug where the Meta Tag couldn't show viewport data
-- Removed Output identifiers. Programmers don't like global variables used that way.
+- Removed Output identifiers. Programmers don't like global variables used that way
 
 ## 0.1.0
 
