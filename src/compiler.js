@@ -78,11 +78,6 @@ function parse(cv) {
       return "Invalid Syntax";
       break;
     case "ul":
-    parsedList = ``;
-    listArray = c[1].split(' * ').map(element => `<li>${element}</li>`)
-    listArray.forEach(element => parsedList += element );
-    return stripEmpty`<${tagname} ${v[1]}>${parsedList}</${tagname}>`;
-    break;
     case "ol":
     parsedList = ``;
     listArray = c[1].split(' * ').map(element => `<li>${element}</li>`)
