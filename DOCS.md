@@ -374,3 +374,35 @@ Negative
 
 Syntax (Negative): script -> argument="foo:bar" ::
 ```
+
+
+#### Unordered List
+
+```
+ul 
+
+Can be Positive or Neutral
+
+Syntax(Positive): ul :: listItem * ...
+
+Syntax(Positive): ul -> argument="foo:bar" :: listItem * ...
+
+Currently doesnt support list item arguments.
+
+```
+
+#### Ordered List
+
+```
+ol 
+
+Can be Positive or Neutral
+
+Syntax(Positive): ol :: listItem * ...
+
+Syntax(Positive): ol -> argument="foo:bar" :: listItem * ...
+
+Currently doesnt support list item arguments.
+
+
+```
