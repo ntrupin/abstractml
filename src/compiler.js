@@ -17,6 +17,8 @@ function parse(cv) {
       break;
     case "div":
     case "span":
+    case "ul":
+    case "ol":
       return stripEmpty`<${tagname} ${v[1]}>${c[1]}`;
       break;
     case "img":
@@ -69,6 +71,12 @@ function parse(cv) {
         case "center":
           return `</center>`;
           break;
+        case "ul":
+          return `</ul>`;
+          break;
+        case "ol":
+          return `</ol>`;
+          break;
       }
     case "":
       return "";
@@ -77,13 +85,9 @@ function parse(cv) {
     case null:
       return "Invalid Syntax";
       break;
-    case "ul":
-    case "ol":
-    parsedList = ``;
-    listArray = c[1].split(' * ').map(element => `<li>${element}</li>`)
-    listArray.forEach(element => parsedList += element );
-    return stripEmpty`<${tagname} ${v[1]}>${parsedList}</${tagname}>`;
-    break;
+    case "li":
+      return stripEmpty`<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
+      break;
   }
 }
 

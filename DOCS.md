@@ -383,11 +383,11 @@ ul
 
 Can be Positive or Neutral
 
-Syntax(Positive): ul :: listItem * ...
+Syntax(Positive): ul ::
 
-Syntax(Positive): ul -> argument="foo:bar" :: listItem * ...
+Syntax(Positive): ul -> argument="foo:bar" :: 
 
-Currently doesnt support list item arguments.
+Closing: end :: ul
 
 ```
 
@@ -398,11 +398,23 @@ ol
 
 Can be Positive or Neutral
 
-Syntax(Positive): ol :: listItem * ...
+Syntax(Positive): ol ::
 
-Syntax(Positive): ol -> argument="foo:bar" :: listItem * ...
+Syntax(Positive): ol -> argument="foo:bar" :: 
 
-Currently doesnt support list item arguments.
+Closing: end :: ol
 
+```
+
+#### List Item
+
+```
+li 
+
+Can be Positive or Neutral
+
+Syntax(Positive): li ::
+
+Syntax(Positive): li -> argument="foo:bar" :: 
 
 ```
