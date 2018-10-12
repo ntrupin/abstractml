@@ -1,0 +1,11 @@
+charset -> utf-8
+meta -> viewport -> width=device-width, initial-scale=1
+link -> stylesheet -> index.css
+title -> Hello, World!
+div
+ h1 -> Example Domain
+ p -> This domain is established to be used for illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.
+ a -> href='http://www.iana.org/domains/example' -> More information...
+end -> div
+
+// -> This is the example.com demo. Try this out in your browser... it looks just like example.com!
