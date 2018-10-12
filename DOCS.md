@@ -374,3 +374,47 @@ Negative
 
 Syntax (Negative): script -> argument="foo:bar" ::
 ```
+
+
+#### Unordered List
+
+```
+ul 
+
+Can be Positive or Neutral
+
+Syntax(Positive): ul ::
+
+Syntax(Positive): ul -> argument="foo:bar" :: 
+
+Closing: end :: ul
+
+```
+
+#### Ordered List
+
+```
+ol 
+
+Can be Positive or Neutral
+
+Syntax(Positive): ol ::
+
+Syntax(Positive): ol -> argument="foo:bar" :: 
+
+Closing: end :: ol
+
+```
+
+#### List Item
+
+```
+li 
+
+Can be Positive or Neutral
+
+Syntax(Positive): li ::
+
+Syntax(Positive): li -> argument="foo:bar" :: 
+
+```
