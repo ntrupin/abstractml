@@ -1,7 +1,6 @@
 function parse(cv) {
-  c = cv.toString().split(" :: ")
-  v = c[0].split(" -> ")
-  tagname = v[0].replace(/\s/g,'')
+  part = cv.toString().split(" -> ")
+  tagname = part[0].replace(/\s/g,'')
   switch(tagname) {
     case "h1":
     case "h2":
@@ -13,20 +12,50 @@ function parse(cv) {
     case "a":
     case "abbr":
     case "button":
-      return stripEmpty`<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
-      break;
+    case "li":
+      switch(part[2]) {
+        case null:
+        case undefined:
+        case '':
+        case ' ':
+          return stripEmpty`<${tagname}>${part[1]}</${tagname}>`;
+          break;
+        case 'noend':
+          return stripEmpty`<${tagname} ${part[1]}>`;
+          break;
+        default:
+          return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
+          break;
+      }
     case "div":
     case "span":
-      return stripEmpty`<${tagname} ${v[1]}>${c[1]}`;
-      break;
+    case "center":
+      switch(part[2]) {
+        case null:
+        case undefined:
+        case '':
+        case ' ':
+          return stripEmpty`<${tagname} ${part[1]}>`;
+          break;
+        case 'end':
+          return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
+          break;
+        default:
+          return stripEmpty`<${tagname} ${part[1]}>${part[2]}`;
+          break;
+      }
     case "img":
-      return stripEmpty`<${tagname} src='${c[1]}' ${v[1]} />`;
+      return stripEmpty`<${tagname} src='${part[1]}' ${part[2]} />`;
+      break;
+    case "ol":
+    case "ul":
+      return stripEmpty`<${tagname} '${part[1]}'>`;
       break;
     case "input":
-      return stripEmpty`<${tagname} ${v[1]}/>`;
+      return stripEmpty`<${tagname} ${part[1]}/>`;
       break;
     case "textarea":
-      return stripEmpty`<${tagname} ${v[1]}>${c[1]}</${tagname}>`;
+      return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
       break;
     case "/br/":
       return "<br>"
@@ -34,48 +63,56 @@ function parse(cv) {
     case "meta":
       meta = document.createElement("meta");
       meta = document.getElementsByTagName("head")[0].appendChild(meta);
-      meta.name = stripEmpty`${v[1]}`;
-      meta.content = stripEmpty`${c[1]}`;
+      meta.name = stripEmpty`${part[1]}`;
+      meta.content = stripEmpty`${part[2]}`;
       return "";
       break;
+    case "charset":
+      meta = document.createElement("meta");
+      meta = document.getElementsByTagName("head")[0].appendChild(meta);
+      meta.charset = stripEmpty`${part[1]}`;
+      return "";
+    break;
     case "link":
       link = document.createElement("link")
       link = document.getElementsByTagName("head")[0].appendChild(link)
-      link.rel = stripEmpty`${v[1]}`
-      link.href = stripEmpty`${c[1]}`
+      link.rel = stripEmpty`${part[1]}`
+      link.href = stripEmpty`${part[2]}`
       return "";
       break;
     case "bodystyle":
-      document.getElementsByTagName("body")[0].style = stripEmpty`${v[1]}`
+      document.getElementsByTagName("body")[0].style = stripEmpty`${part[1]}`
       return "";
       break;
     case "title":
-      return stripEmpty`<${tagname}>${c[1]}</${tagname}>`;
-      break;
-    case "script":
-      return stripEmpty`<${tagname} ${v[1]}></${tagname}>`;
-      break;
-    case "center":
-      return stripEmpty`<${tagname} ${v[1]}>`;
-      break;
-    case "end":
-      switch(c[1]) {
-        case "div":
-          return `</div>`;
-          break;
-        case "span":
-          return `</span>`;
-          break;
-        case "center":
-          return `</center>`;
-          break;
-      }
-    case "":
+      title = document.createElement("title")
+      title = document.getElementsByTagName("head")[0].appendChild(title)
+      title.innerHTML = stripEmpty`${part[1]}`
       return "";
       break;
-    case undefined: 
+    case "script":
+    case "style":
+      return stripEmpty`<${tagname} ${part[1]}></${tagname}>`;
+      break;
+    case "headscript":
+      script = document.createElement("script")
+      script = document.getElementsByTagName("head")[0].appendChild(script)
+      script.src = stripEmpty`${part[1]}`
+      return "";
+      break;
+    case "//":
+      return stripEmpty`<!-- ${part[1]} -->`;
+      break;
+    case "end":
+        return `</${part[1]}>`;
+        break;
+    case "":
+      return `${part[0]}`;
+      break;
+    case undefined:
     case null:
-      return "Invalid Syntax";
+    default:
+      return `${part[0]}`;
       break;
   }
 }
