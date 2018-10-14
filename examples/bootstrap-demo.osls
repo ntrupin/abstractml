@@ -1,0 +1,59 @@
+charset -> utf-8
+meta -> viewport -> width=device-width, initial-scale=1, shrink-to-fit=no
+link -> stylesheet -> https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css
+title -> Hello, world
+nav -> class="navbar navbar-light bg-light"
+  a -> class="navbar-brand" href="#" -> .
+    img -> https://raw.githubusercontent.com/ntrupin/LineScript/master/images/360D4164-622D-49A3-88CE-20DFC84BF503.png -> width="30" height="30" class="d-inline-block align-top" alt=""
+    LineScript Example
+  end -> a
+end -> nav
+div -> class="jumbotron"
+  h1 -> class="display-4" -> LineScript Example
+  p -> class="lead" -> This web page was written entirely in LineScript, with styling from Bootstrap 4.
+  hr -> class="my-4"
+  p -> It uses utility classes for typography and spacing to space content out within the larger container.
+  a -> class="btn btn-primary btn-lg" href="https://github.com/ntrupin/linescript" role="button" -> LineScript
+
+  a -> class="btn btn-primary btn-lg" href="https://getbootstrap.com" role="button" -> Bootstrap
+end -> div
+div -> class="container"
+  div -> class="row"
+    div -> class="col-sm"
+      div -> class="card" style="width: 18rem;"
+        div -> class="card-body"
+          h5 -> class="card-title" -> Simple
+          h6 -> class="card-subtitle mb-2 text-muted" -> as making a roast beef sandwich
+          p -> class="card-text" -> LineScript is very simple to learn and to use - every expression points to another, and fits together as easily as a children's puzzle!
+          a -> href="https://github.com/ntrupin/linescript" class="card-link" -> LineScript
+        end -> div
+      end -> div
+    end -> div
+    div -> class="col-sm"
+      div -> class="card" style="width: 18rem;"
+        div -> class="card-body"
+          h5 -> class="card-title" -> Integratable
+          h6 -> class="card-subtitle mb-2 text-muted" -> with many JS and CSS libraries
+          p -> class="card-text" -> LineScript can be used with almost every popular JS or CSS library - this page uses Bootstrap 4 and jQuery 3!
+          a -> href="https://getbootstrap.com" class="card-link" -> Bootstrap
+          a -> href="https://jquery.com" class="card-link" -> jQuery
+        end -> div
+      end -> div
+    end -> div
+    div -> class="col-sm"
+      div -> class="card" style="width: 18rem;"
+        div -> class="card-body"
+          h5 -> class="card-title" -> All-Around Friendly
+          h6 -> class="card-subtitle mb-2 text-muted" -> for even the newest developers
+          p -> class="card-text" -> LineScript was built from the ground up to be instantly adaptable, and able to be used or contributed to be even the newest developer!
+          a -> href="https://github.com/ntrupin/linescript" class="card-link" -> LineScript
+        end -> div
+      end -> div
+    end -> div
+  end -> div
+end -> div
+script -> src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+script -> src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+script -> src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+
+// -> This is a demonstration of LineScript using Bootstrap 4!
