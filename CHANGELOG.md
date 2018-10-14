@@ -2,6 +2,13 @@
 
 Updates are descending from most recent.
 
+## 0.2.1
+all by @ntrupin {LineScript}
+
+### Documentation Changes
+
+- Began working on new documentation
+
 ## 0.2.0
 
 ### Compiler Changes
@@ -13,6 +20,16 @@ Updates are descending from most recent.
 - Added ul tag (thanks, @nmacarthur)
 - Added ol tag (thanks, @nmacarthur)
 - Added li tag (thanks, @nmacarthur)
+- Added headscript tag (@ntrupin {LineScript})
+- Added section tag (@ntrupin {LineScript})
+- Added nav tag (@ntrupin {LineScript})
+- Added main tag (@ntrupin {LineScript})
+- Added header tag (@ntrupin {LineScript})
+- Added hr tag (@ntrupin {LineScript})
+- Added the ability to write text outside of tags (@ntrupin {LineScript})
+- Added the ability to have empty elements (@ntrupin {LineScript})
+- Added comment tag (@ntrupin {LineScript})
+- Simplified end sequence (@ntrupin {LineScript})
 
 ### Bug Fixes
 
