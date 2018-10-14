@@ -16,33 +16,42 @@ function parse(cv) {
       switch(part[2]) {
         case null:
         case undefined:
-        case '':
-        case ' ':
           return stripEmpty`<${tagname}>${part[1]}</${tagname}>`;
           break;
-        case 'noend':
-          return stripEmpty`<${tagname} ${part[1]}>`;
-          break;
         default:
-          return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
-          break;
+          switch(part[2].replace(/\s/g,'')) {
+            case '':
+            case '.':
+            case ' ':
+              return stripEmpty`<${tagname} ${part[1]}>`;
+              break;
+            default:
+              return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
+              break;
+          }
       }
     case "div":
     case "span":
     case "center":
+    case "header":
+    case "nav":
+    case "main":
       switch(part[2]) {
         case null:
         case undefined:
-        case '':
-        case ' ':
           return stripEmpty`<${tagname} ${part[1]}>`;
           break;
-        case 'end':
-          return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
-          break;
         default:
-          return stripEmpty`<${tagname} ${part[1]}>${part[2]}`;
-          break;
+          switch(part[2]) {
+            case '':
+            case '.':
+            case ' ':
+              return stripEmpty`<${tagname} ${part[1]}></${tagname}>`;
+              break;
+            default:
+              return stripEmpty`<${tagname} ${part[1]}>${part[2]}`;
+              break;
+          }
       }
     case "img":
       return stripEmpty`<${tagname} src='${part[1]}' ${part[2]} />`;
@@ -57,9 +66,17 @@ function parse(cv) {
     case "textarea":
       return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
       break;
-    case "/br/":
-      return "<br>"
-      break;
+    case "br":
+    case "hr":
+      switch(part[1]) {
+        case null:
+        case undefined:
+          return stripEmpty`<${tagname}>`;
+          break;
+        default:
+          return stripEmpty`<${tagname} ${part[1]}>`;
+          break;
+      }
     case "meta":
       meta = document.createElement("meta");
       meta = document.getElementsByTagName("head")[0].appendChild(meta);
@@ -95,11 +112,33 @@ function parse(cv) {
       return stripEmpty`<${tagname} ${part[1]}></${tagname}>`;
       break;
     case "headscript":
-      script = document.createElement("script")
-      script = document.getElementsByTagName("head")[0].appendChild(script)
-      script.src = stripEmpty`${part[1]}`
-      return "";
-      break;
+      switch(part[2]) {
+        case null:
+        case undefined:
+          script = document.createElement("script")
+          script = document.getElementsByTagName("head")[0].appendChild(script)
+          script.src = stripEmpty`${part[1]}`
+          return "";
+          break;
+        default:
+          switch(part[2]) {
+            case '':
+            case 'defer':
+            case ' ':
+              script = document.createElement("script")
+              script = document.getElementsByTagName("head")[0].appendChild(script)
+              script.defer = true
+              script.src = stripEmpty`${part[1]}`
+            return "";
+            break;
+            default:
+              script = document.createElement("script")
+              script = document.getElementsByTagName("head")[0].appendChild(script)
+              script.src = stripEmpty`${part[1]}`
+              return "";
+              break;
+        }
+      }
     case "//":
       return stripEmpty`<!-- ${part[1]} -->`;
       break;
