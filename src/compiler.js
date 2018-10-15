@@ -1,217 +1,170 @@
 function parse(cv) {
- c = cv.toString().split(" :: ")
- v = c[0].split(" -> ")
- switch(v[0].replace(/\s/g,'')) {
-  // Heading 1
-  case "h1":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h1>" + c[1] + "</h1>"
-     return output;
-     break;
-    default:
-     output = "<h1 " + v[1] + ">" + c[1] + "</h1>"
-     return output;
-     break;
-   }
-  // Heading 2
-  case "h2":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h2>" + c[1] + "</h2>"
-     return output;
-     break;
-    default:
-     output = "<h2 " + v[1] + ">" + c[1] + "</h2>"
-     return output;
-     break;
-   }
-  // Heading 3
-  case "h3":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h3>" + c[1] + "</h3>"
-     return output;
-     break;
-    default:
-     output = "<h3 " + v[1] + ">" + c[1] + "</h3>"
-     return output;
-     break;
-   }
-  // Heading 4
-  case "h4":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h4>" + c[1] + "</h4>"
-     return output;
-     break;
-    default:
-     output = "<h4 " + v[1] + ">" + c[1] + "</h4>"
-     return output;
-     break;
-   }
-  // Heading 5
-  case "h5":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h5>" + c[1] + "</h5>"
-     return output;
-     break;
-    default:
-     output = "<h5 " + v[1] + ">" + c[1] + "</h5>"
-     return output;
-     break;
-   }
-  // Heading 6
-  case "h6":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h6>" + c[1] + "</h6>"
-     return output;
-     break;
-    default:
-     output = "<h6 " + v[1] + ">" + c[1] + "</h6>"
-     return output;
-     break;
-   }
-  // Paragraph
-  case "p":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<p>" + c[1] + "</p>"
-     return output;
-     break;
-    default:
-     output = "<p " + v[1] + ">" + c[1] + "</p>"
-     return output;
-     break;
-    }
-  // Span
-  case "span":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<span>" + c[1] + "</span>"
-     return output;
-     break;
-    default:
-     output = "<span " + v[1] + ">" + c[1] + "</span>"
-     return output;
-     break;
-    }
-   // Linebreak
-   case "/br/":
-    output + "<br>"
-    return output;
-    break;
-   // Meta Tags
-   case "meta":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      output = "<meta />"
-      return output;
-      break;
-     default:
-      output = "<meta " + v[1] + " />"
-      return output;
-      break;
-    }
-   // External Resource Links
-   case "link":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      output = "<link />"
-      return output;
-      break;
-     default:
-      output = "<link " + v[1] + " />"
-      return output;
-      break;
-    } 
-   // Style for Body
-   case "bodystyle":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      output = ""
-      return output;
-      break;
-     default:
-      output = ""
-      document.getElementsByTagName("body")[0].style = v[1]
-      return output;
-      break;
-    }
-   // Page Title
-   case "title":
-    output = "<title>" + c[1] + "</title>"
-    return output;
-    break;
-   // Div
-   case "div":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      switch(c[1]) {
-       case undefined:
-       case null:
-        output = "<div>"
-        return output;
-        break;
-       default:
-        output = "<div>" + c[1]
-        return output;
-        break;
+  part = cv.toString().split(" -> ")
+  tagname = part[0].replace(/\s/g,'')
+  switch(tagname) {
+    case "h1":
+    case "h2":
+    case "h3":
+    case "h4":
+    case "h5":
+    case "h6":
+    case "p":
+    case "a":
+    case "abbr":
+    case "button":
+    case "li":
+      switch(part[2]) {
+        case null:
+        case undefined:
+          return stripEmpty`<${tagname}>${part[1]}</${tagname}>`;
+          break;
+        default:
+          switch(part[2].replace(/\s/g,'')) {
+            case '':
+            case '.':
+            case ' ':
+              return stripEmpty`<${tagname} ${part[1]}>`;
+              break;
+            default:
+              return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
+              break;
+          }
       }
-    default:
-     switch(c[1]) {
-      case undefined:
-      case null:
-       output = "<div " + v[1] + ">"
-       return output;
-       break;
-      default:
-       output = "<div " + v[1] + ">" + c[1]
-       return output;
-       break;
-     }
-    }
-   // Script (External)
-   case "script":
-    switch(v[1]) {
-     case undefined:
-     case null:
-      output = "<script></script>"
-      return output;
+    case "div":
+    case "span":
+    case "center":
+    case "header":
+    case "nav":
+    case "main":
+      switch(part[2]) {
+        case null:
+        case undefined:
+          return stripEmpty`<${tagname} ${part[1]}>`;
+          break;
+        default:
+          switch(part[2]) {
+            case '':
+            case '.':
+            case ' ':
+              return stripEmpty`<${tagname} ${part[1]}></${tagname}>`;
+              break;
+            default:
+              return stripEmpty`<${tagname} ${part[1]}>${part[2]}`;
+              break;
+          }
+      }
+    case "img":
+      return stripEmpty`<${tagname} src='${part[1]}' ${part[2]} />`;
       break;
-     default:
-      output = "<script " + v[1] + " /></script>"
-      return output;
+    case "ol":
+    case "ul":
+      return stripEmpty`<${tagname} '${part[1]}'>`;
       break;
-   }
-   // Section Closer
-   case "end":
-    switch(c[1]) {
-     case "div":
-      output = "</div>"
-      return output;
+    case "input":
+      return stripEmpty`<${tagname} ${part[1]}/>`;
       break;
-    }
-   // Errors
-   case undefined: 
-   case null:
-   default:
-    output = "MISSING IDENTIFIERS"
-    return output;
+    case "textarea":
+      return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
+      break;
+    case "br":
+    case "hr":
+      switch(part[1]) {
+        case null:
+        case undefined:
+          return stripEmpty`<${tagname}>`;
+          break;
+        default:
+          return stripEmpty`<${tagname} ${part[1]}>`;
+          break;
+      }
+    case "meta":
+      meta = document.createElement("meta");
+      meta = document.getElementsByTagName("head")[0].appendChild(meta);
+      meta.name = stripEmpty`${part[1]}`;
+      meta.content = stripEmpty`${part[2]}`;
+      return "";
+      break;
+    case "charset":
+      meta = document.createElement("meta");
+      meta = document.getElementsByTagName("head")[0].appendChild(meta);
+      meta.charset = stripEmpty`${part[1]}`;
+      return "";
     break;
- }
+    case "link":
+      link = document.createElement("link")
+      link = document.getElementsByTagName("head")[0].appendChild(link)
+      link.rel = stripEmpty`${part[1]}`
+      link.href = stripEmpty`${part[2]}`
+      return "";
+      break;
+    case "bodystyle":
+      document.getElementsByTagName("body")[0].style = stripEmpty`${part[1]}`
+      return "";
+      break;
+    case "title":
+      title = document.createElement("title")
+      title = document.getElementsByTagName("head")[0].appendChild(title)
+      title.innerHTML = stripEmpty`${part[1]}`
+      return "";
+      break;
+    case "script":
+    case "style":
+      return stripEmpty`<${tagname} ${part[1]}></${tagname}>`;
+      break;
+    case "headscript":
+      switch(part[2]) {
+        case null:
+        case undefined:
+          script = document.createElement("script")
+          script = document.getElementsByTagName("head")[0].appendChild(script)
+          script.src = stripEmpty`${part[1]}`
+          return "";
+          break;
+        default:
+          switch(part[2]) {
+            case '':
+            case 'defer':
+            case ' ':
+              script = document.createElement("script")
+              script = document.getElementsByTagName("head")[0].appendChild(script)
+              script.defer = true
+              script.src = stripEmpty`${part[1]}`
+            return "";
+            break;
+            default:
+              script = document.createElement("script")
+              script = document.getElementsByTagName("head")[0].appendChild(script)
+              script.src = stripEmpty`${part[1]}`
+              return "";
+              break;
+        }
+      }
+    case "//":
+      return stripEmpty`<!-- ${part[1]} -->`;
+      break;
+    case "end":
+        return `</${part[1]}>`;
+        break;
+    case "":
+      return `${part[0]}`;
+      break;
+    case undefined:
+    case null:
+    default:
+      return `${part[0]}`;
+      break;
+  }
+}
+
+function stripEmpty (stringsArg,...inputsArg) {
+  let str = "";
+  let strings = Array.from(stringsArg);
+  let inputs = Array.from(inputsArg);
+  while (strings.length || inputs.length) {
+    const string = strings.shift();
+    str += string!=null?string:"";
+    const input = inputs.shift();
+    str += input!=null?input:"";
+  }
+  return str;
 }
