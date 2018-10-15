@@ -170,6 +170,21 @@ table
 --> Result: <table style="color:blue">Hello, World!
 ```
 
+#### Table Header
+
+```javascript
+th
+-> Full Usage: th -> ARGUMENTS
+--> Example: th -> style="color:blue"
+--> Result: <th style="color:blue">
+-> Self-CLosing Usage: th -> ARGUMENTS -> end
+--> Example th -> style="color:blue" -> end
+--> Result <th style="color:blue"></th>
+-> Text-Included Usage: th -> ARGUMENTS -> TEXT
+--> Example: th  -> style="color:blue" -> Hello, World!
+--> Result: <th style="color:blue">Hello, World!
+```
+
 #### Table Row
 
 ```javascript

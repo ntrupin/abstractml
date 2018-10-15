@@ -38,6 +38,7 @@ function parse(cv) {
     case "main":
     case "form":
     case "table":
+    case "th":
     case "tr":
     case "td":
       switch(part[2]) {
