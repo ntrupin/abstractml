@@ -155,4 +155,79 @@ div
 --> Result: <div style="color:blue">Hello, World!
 ```
 
+#### Table
+
+```javascript
+table
+-> Full Usage: table -> ARGUMENTS
+--> Example: table -> style="color:blue"
+--> Result: <table style="color:blue">
+-> Self-CLosing Usage: table -> ARGUMENTS -> end
+--> Example table -> style="color:blue" -> end
+--> Result <table style="color:blue"></table>
+-> Text-Included Usage: table -> ARGUMENTS -> TEXT
+--> Example: table  -> style="color:blue" -> Hello, World!
+--> Result: <table style="color:blue">Hello, World!
+```
+
+#### Table Header
+
+```javascript
+th
+-> Full Usage: th -> ARGUMENTS
+--> Example: th -> style="color:blue"
+--> Result: <th style="color:blue">
+-> Self-CLosing Usage: th -> ARGUMENTS -> end
+--> Example th -> style="color:blue" -> end
+--> Result <th style="color:blue"></th>
+-> Text-Included Usage: th -> ARGUMENTS -> TEXT
+--> Example: th  -> style="color:blue" -> Hello, World!
+--> Result: <th style="color:blue">Hello, World!
+```
+
+#### Table Row
+
+```javascript
+tr
+-> Full Usage: tr -> ARGUMENTS
+--> Example: tr -> style="color:blue"
+--> Result: <tr style="color:blue">
+-> Self-CLosing Usage: tr -> ARGUMENTS -> end
+--> Example tr -> style="color:blue" -> end
+--> Result <tr style="color:blue"></tr>
+-> Text-Included Usage: tr -> ARGUMENTS -> TEXT
+--> Example: tr  -> style="color:blue" -> Hello, World!
+--> Result: <tr style="color:blue">Hello, World!
+```
+
+#### Table Data
+
+```javascript
+td
+-> Full Usage: td -> ARGUMENTS
+--> Example: td -> style="color:blue"
+--> Result: <td style="color:blue">
+-> Self-CLosing Usage: td -> ARGUMENTS -> end
+--> Example td -> style="color:blue" -> end
+--> Result <td style="color:blue"></td>
+-> Text-Included Usage: td -> ARGUMENTS -> TEXT
+--> Example: td  -> style="color:blue" -> Hello, World!
+--> Result: <td style="color:blue">Hello, World!
+```
+
+#### Form
+
+```javascript
+form
+-> Full Usage: form -> ARGUMENTS
+--> Example: form -> style="color:blue"
+--> Result: <form style="color:blue">
+-> Self-CLosing Usage: form -> ARGUMENTS -> end
+--> Example form -> style="color:blue" -> end
+--> Result <form style="color:blue"></form>
+-> Text-Included Usage: form -> ARGUMENTS -> TEXT
+--> Example: form  -> style="color:blue" -> Hello, World!
+--> Result: <form style="color:blue">Hello, World!
+```
+
 **The rest of the documentation will be added shortly**
