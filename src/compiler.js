@@ -36,6 +36,11 @@ function parse(cv) {
     case "header":
     case "nav":
     case "main":
+    case "form":
+    case "table":
+    case "th":
+    case "tr":
+    case "td":
       switch(part[2]) {
         case null:
         case undefined:
