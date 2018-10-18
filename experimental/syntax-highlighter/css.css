@@ -1,0 +1,5 @@
+.text { color:#eee; }
+.keyword.operator {color:#cc3e44; }
+.comment {color:#b0b0b0; }
+.variable.language {color:#cbcb41; }
+.support.variable {color:#519aba; }
