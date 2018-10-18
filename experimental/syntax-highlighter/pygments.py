@@ -13,16 +13,16 @@ class LinescriptLexer(RegexLexer):
 
     tokens = {
         'root' : [
-            (u'(// ->)', bygroups(String), 'main__1'),
-            (u'(->)', bygroups(String)),
-            (u'(?<=^)(.*?)(?=->)', bygroups(String)),
-            (u'(?<=^)(.*?)(?=$)', bygroups(String)),
-            (u'(?<=->)(.*?)(?=->)', bygroups(String)),
+            (u'(// ->)', bygroups(Comment), 'main__1'),
+            (u'(->)', bygroups(Keyword.Reserved)),
+            (u'(?<=^)(.*?)(?=->)', bygroups(Keyword.Declaration)),
+            (u'(?<=^)(.*?)(?=$)', bygroups(Keyword.Declaration)),
+            (u'(?<=->)(.*?)(?=->)', bygroups(Name.Variable)),
             ('(\n|\r|\r\n)', String),
             ('.', String),
         ], 
         'main__1' : [
             ('(\n|\r|\r\n)', String),
-            ('.', String),
+            ('.', Comment),
         ]
     }
