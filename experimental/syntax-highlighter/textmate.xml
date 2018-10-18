@@ -1,0 +1,87 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0" >
+<!-- Generated via Iro -->
+<dict>
+  <key>fileTypes</key>
+  <array> 
+    <string>osls</string>
+   </array>
+  <key>name</key>
+  <string>LineScript</string>
+  <key>patterns</key>
+  <array> 
+    <dict>
+      <key>include</key>
+      <string>#main</string>
+    </dict>
+   </array>
+  <key>scopeName</key>
+  <string>source.LineScript</string>
+  <key>uuid</key>
+  <string></string>
+  <key>repository</key>
+  <dict>
+    <key>main</key>
+    <dict>
+      <key>patterns</key>
+      <array> 
+        <dict>
+          <key>begin</key>
+          <string>(// -&gt;)</string>
+          <key>beginCaptures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>comment.LineScript</string>
+            </dict>
+          </dict>
+          <key>contentName</key>
+          <string>comment.LineScript</string>
+          <key>end</key>
+          <string>($)</string>
+          <key>endCaptures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>comment.LineScript</string>
+            </dict>
+          </dict>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(-&gt;)</string>
+          <key>name</key>
+          <string>keyword.operator.LineScript</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(?&lt;=^)(.*?)(?=-&gt;)</string>
+          <key>name</key>
+          <string>variable.language.LineScript</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(?&lt;=^)(.*?)(?=$)</string>
+          <key>name</key>
+          <string>variable.language.LineScript</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(?&lt;=-&gt;)(.*?)(?=-&gt;)</string>
+          <key>name</key>
+          <string>support.variable.LineScript</string>
+        </dict>
+       </array>
+    </dict>
+    <key>main__1</key>
+    <dict>
+      <key>patterns</key>
+      <array> 
+       </array>
+    </dict>
+  </dict>
+</dict>
+</plist>
