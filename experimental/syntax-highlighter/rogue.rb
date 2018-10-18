@@ -9,18 +9,18 @@ module Rouge
       filenames '*.osls'
 
       state:root do
-          rule /(\/\/ ->)/, String, :main__1
-          rule /(->)/, String
-          rule /(?<=^)(.*?)(?=->)/, String
-          rule /(?<=^)(.*?)(?=$)/, String
-          rule /(?<=->)(.*?)(?=->)/, String
+          rule /(\/\/ ->)/, Comment, :main__1
+          rule /(->)/, Keyword::Reserved
+          rule /(?<=^)(.*?)(?=->)/, Keyword::Declaration
+          rule /(?<=^)(.*?)(?=$)/, Keyword::Declaration
+          rule /(?<=->)(.*?)(?=->)/, Name::Variable
           rule /(\n|\r|\r\n)/, String
           rule /./, String
       end
 
       state:main__1 do
           rule /(\n|\r|\r\n)/, String
-          rule /./, String
+          rule /./, Comment
       end
 
     end
