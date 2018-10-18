@@ -2,6 +2,14 @@
 
 Updates are descending from most recent.
 
+## 0.2.2
+all by @ntrupin {LineScript}
+
+### Miscellaneous Changes
+
+- Created a beta of a TextMate syntax highlighter
+- Refactored the syntax highlighter for CoffeeScript, Python, Ruby, XML, and YAML
+
 ## 0.2.1
 all by @ntrupin {LineScript}
 
