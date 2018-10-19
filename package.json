@@ -1,6 +1,6 @@
 {
   "name": "language-linescript",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Adds grammar support for LineScript",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
