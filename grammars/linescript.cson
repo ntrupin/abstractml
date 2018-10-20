@@ -16,32 +16,32 @@
         'begin' : '(// ->)'
         'beginCaptures' : {
           '1' : {
-            'name' : 'comment.LineScript'
+            'name' : 'styles.commentTag.LineScript'
           }
         }
-        'contentName' : 'comment.LineScript'
+        'contentName' : 'styles.commentTag.LineScript'
         'end' : '($)'
         'endCaptures' : {
           '1' : {
-            'name' : 'comment.LineScript'
+            'name' : 'styles.commentTag.LineScript'
           }
         }
       }
       {
         'match' : '(->)'
-        'name' : 'keyword.operator.LineScript'
+        'name' : 'styles.arrowFunc.LineScript'
       }
       {
         'match' : '(?<=^)(.*?)(?=->)'
-        'name' : 'variable.language.LineScript'
+        'name' : 'styles.oslsTag.LineScript'
       }
       {
         'match' : '(?<=^)(.*?)(?=$)'
-        'name' : 'variable.language.LineScript'
+        'name' : 'styles.oslsTag.LineScript'
       }
       {
         'match' : '(?<=->)(.*?)(?=->)'
-        'name' : 'support.variable.LineScript'
+        'name' : 'styles.argsTag.LineScript'
       }
     ]
   }
