@@ -1,4 +1,4 @@
-# LineScript ![](https://img.shields.io/github/stars/ntrupin/LineScript.svg) ![](https://img.shields.io/github/forks/ntrupin/LineScript.svg) ![](https://img.shields.io/github/license/ntrupin/LineScript.svg)
+# LineScript ![](https://img.shields.io/github/stars/ntrupin/LineScript.svg) ![](https://img.shields.io/github/forks/ntrupin/LineScript.svg) [![APMVersion](https://img.shields.io/apm/v/language-linescript.svg)](https://atom.io/packages/language-linescript) [![APMDownloads](https://img.shields.io/apm/dm/language-linescript.svg)](https://atom.io/packages/language-linescript) ![](https://img.shields.io/github/license/ntrupin/LineScript.svg)
 
 <img src="https://raw.githubusercontent.com/ntrupin/LineScript/master/images/E81C9271-1AFE-487E-BDB0-5958E02F0ADB.jpeg" width="100%" />
 
