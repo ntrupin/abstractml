@@ -43,6 +43,10 @@
         'match' : '(?<=->)(.*?)(?=->)'
         'name' : 'entity.name.type.LineScript'
       }
+      {
+        'match' : '(?<=->)(.*$)(?=$)'
+        'name' : 'text.LineScript'
+      }
     ]
   }
   'main__1' : {
