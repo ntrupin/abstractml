@@ -1,6 +1,6 @@
 {
   "name": "language-linescript",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Adds grammar support for LineScript",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ntrupin/linescript.git"
+    "url": "https://github.com/ntrupin/linescript.git"
   },
   "keywords": [
     "language",
