@@ -2,6 +2,13 @@
 
 Updates are descending from most recent.
 
+## 0.2.3
+all by @ntrupin {LineScript}
+
+## Miscellaneous Changes
+
+- Added syntax highlighting support for GitHub's Atom editor
+
 ## 0.2.2
 all by @ntrupin {LineScript}
 
