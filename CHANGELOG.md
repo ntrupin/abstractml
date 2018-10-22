@@ -5,15 +5,15 @@ Updates are descending from most recent.
 ## 0.2.3
 all by @ntrupin {LineScript}
 
-## Compiler Changes
+### Compiler Changes
 
 - **-breaking change -** Consolidated gate.js and compiler.js
 
-## Miscellaneous Changes
+### Miscellaneous Changes
 
 - Added syntax highlighting support for GitHub's Atom editor
 
-## Bug Fixes
+### Bug Fixes
 
 - Fixed a bug where the highlighter's TextMate Scopes did not align with its color
 
