@@ -1,0 +1,6 @@
+[package]
+name = "precompiler"
+version = "0.1.0"
+authors = ["ntrupin <ntrupin@ntrupin.com>"]
+
+[dependencies]
