@@ -1,24 +1,30 @@
 fn main() {
-    let split = "h1 -> style='color:blue' -> Hi!\np -> style='color:blue' -> Hi!".split("\n");
-    for spli in split {
-        let spl = spli.split(" -> ");
-        let mut count = 0;
-        for s in spl {
-            match count {
-                0 => {
-                    print!("<{} ", s)
+    let parts: Vec<&str> = "h1 -> style='color:blue' -> Hi!\np -> Hi!\nHi!\nh1 -> style='color:blue' -> noend"
+        .trim()
+        .split("\n")
+        .collect();
+    for part in parts {
+        let seg: Vec<&str> = part
+            .trim()
+            .split(" -> ")
+            .collect();
+        if seg.len() == 3 {
+            let (tag, args, inner) = (seg[0], seg[1], seg[2]);
+            match tag {
+                "h1"|"h2"|"h3"|"h4"|"h5"|"h6"|"p"|"a"|"abbr"|"button"|"li" => {
+                    match inner {
+                        "noend"|"."|" " => println!("<{} {}>", tag, args),
+                        _ => println!("<{} {}>{}</{}>", tag, args, inner, tag)
+                    }
                 },
-                1 => {
-                    print!("{}>", s)
-                },
-                2 => {
-                    print!("{}", s);
-                    print!("</{}>", "work-in-progress");
-                    count = 0;
-                },
-                _ => print!("-ERROR-"),
-            }
-            count = count + 1;
+                _ => println!("{}", tag)
+            } 
+        } if seg.len() == 2 {
+            let (tag, args) = (seg[0], seg[1]);
+            match tag {
+                "h1"|"h2"|"h3"|"h4"|"h5"|"h6"|"p"|"a"|"abbr"|"button"|"li" => println!("<{}>{}</{}>", tag, args, tag),
+                _ => println!("{}", tag)
+            } 
         }
     }
 }
