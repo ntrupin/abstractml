@@ -1,5 +1,5 @@
 fn main() {
-    let parts: Vec<&str> = "h1 -> style='color:blue' -> Hi!\np -> Hi!\nHi!\nh1 -> style='color:blue' -> noend\ndiv -> id='div'\ndiv -> style='div' -> end"
+    let parts: Vec<&str> = "h1 -> style='color:blue' -> Hi!\np -> Hi!\nHi!\nh1 -> style='color:blue' -> noend\ndiv -> style='div' -> end\ndiv -> id='div'\nend -> div"
         .trim()
         .split("\n")
         .collect();
@@ -29,6 +29,7 @@ fn main() {
             match tag {
                 "h1"|"h2"|"h3"|"h4"|"h5"|"h6"|"p"|"a"|"abbr"|"button"|"li" => println!("<{}>{}</{}>", tag, args, tag),
                 "div"|"span"|"center"|"header"|"nav"|"main"|"form"|"table"|"th"|"tr"|"td" => println!("<{} {}>", tag, args),
+                "end" => println!("</{}>", args),
                 _ => println!("{}", tag)
             } 
         }
