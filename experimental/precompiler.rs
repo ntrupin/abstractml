@@ -1,9 +1,14 @@
 extern crate autopilot;
 
 use std::env;
+use std::fs::File;
+use std::io::prelude::*;
 
-fn compile() {
-    let parts: Vec<&str> = "charset -> utf-8\nmeta -> viewport -> width=device-width, initial-scale=1\nlink -> stylesheet -> index.css\ntitle -> Hello, World!\ndiv\nh1 -> Example Domain\np -> This domain is established to be used for illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.\na -> href='http://www.iana.org/domains/example' -> More information...\nend -> div\nimg -> https://google.com\nimg -> https://google.com -> width='90px' height='90px'\nol\nli -> Hi!\nend -> ol\nul -> style='color:blue'"
+fn compile(filename: String) {
+    let mut f = File::open(filename).expect("file not found");
+    let mut contents = String::new();
+    f.read_to_string(&mut contents).expect("something went wrong reading the file");
+    let parts: Vec<&str> = contents
         .trim()
         .split("\n")
         .collect();
@@ -52,6 +57,7 @@ fn compile() {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    let file_arg = &args[1];
     println!("File to compile: {:?}", args[1]);
     let response = autopilot::alert::alert(
         "Welcome to the LineScript Precompiler! This is the official utility to compile LineScript into working HTML5 straight from your desktop, before you deploy it on the web.",
@@ -60,7 +66,14 @@ fn main() {
         Some("Cancel"),
     );
     match response {
-        autopilot::alert::Response::Default => compile(),
-        autopilot::alert::Response::Cancel => println!("The process was successfully terminated."),
+        autopilot::alert::Response::Default => compile(file_arg.to_string()),
+        autopilot::alert::Response::Cancel => {
+            autopilot::alert::alert(
+                "The process was successfully terminated.",
+                Some("LineScript Precompiler"),
+                None,
+                None,
+            );
+        }//println!("The process was successfully terminated."),
     }
 }
