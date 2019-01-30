@@ -114,7 +114,11 @@ function parse(cv) {
       break;
     case "script":
     case "style":
-      return stripEmpty`<${tagname} ${part[1]}></${tagname}>`;
+			ss = document.createElement(tagname)
+			ss.src = stripEmpty`${part[1]}`
+			console.log(ss)
+			ss = document.body.appendChild(ss)
+      return ""
       break;
     case "headscript":
       switch(part[2]) {
@@ -182,12 +186,10 @@ function build(filename) {
       it = "";
       y.forEach(function(ele) {
         output = parse(ele)
-        console.log(output)
         it = it + output
-        console.log(it)
         document.getElementById("line").innerHTML = it
-        console.log(document.getElementById("whole").innerHTML)
       });
+			console.log(document.getElementById("whole").innerHTML)
     });
   });
 }
