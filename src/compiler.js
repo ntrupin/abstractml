@@ -13,6 +13,9 @@ function parse(cv) {
     case "abbr":
     case "button":
     case "li":
+		case "small":
+		case "b":
+		case "u":
       switch(part[2]) {
         case null:
         case undefined:
@@ -144,15 +147,15 @@ function parse(cv) {
       return stripEmpty`<!-- ${part[1]} -->`;
       break;
     case "end":
-        return `</${part[1]}>`;
+        return stripEmpty`</${part[1]}>`;
         break;
     case "":
-      return `${part[0]}`;
+      return stripEmpty`${part[0]}`;
       break;
     case undefined:
     case null:
     default:
-      return `${part[0]}`;
+      return stripEmpty`${part[0]}`;
       break;
   }
 }
