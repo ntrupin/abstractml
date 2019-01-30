@@ -1,0 +1,39 @@
+link -> stylesheet -> https://ntrupin.com/normalize.css
+link -> stylesheet -> https://ntrupin.com/skeleton.css
+link -> stylesheet -> style.css
+meta -> viewport -> width=device-width, initial-scale=1
+div
+	h4 -> Linescript
+	p -> The open source language that compiles into HTML at runtime to provide easy syntax for beautiful webpages, complete with JavaScript and CSS. Perfect for beginners and experts!
+	img -> https://github.com/ntrupin/linescript/blob/master/images/E81C9271-1AFE-487E-BDB0-5958E02F0ADB.jpeg?raw=true -> width="100%"
+end -> div
+hr
+div
+	b -> About this page
+	p -> This page was created by the original creator of Linescript, Noah Trupin. It was made to be an example of how versatile and simple the markup language could be in creating full-fledged webpages.
+	p -> This webpage used stylesheets from three sources:
+	ul
+		li -> . -> .
+			a -> href="https://github.com/necolas/normalize.css/" -> normalize.css
+		end -> li
+		li -> . -> .
+		 a -> href="https://github.com/dhg/Skeleton" -> skeleton.css
+		end -> li
+		li -> Custom styles
+	end -> ul
+end -> div
+hr
+div -> class="grid-container"
+	div -> class="grid-item"
+		button -> onclick="window.location.href='https://github.com/ntrupin/linescript'" class="button-primary" -> GitHub
+	end -> div
+	div -> class="grid-item"
+		button -> onclick="window.location.href='https://ntrupin.com'" class="button-primary" -> ntrupin.com
+	end -> div
+end -> div
+hr
+div
+	center
+		small -> Generated with Linescript on 1.29.19
+	end -> center
+end -> div
