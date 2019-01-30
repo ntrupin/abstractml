@@ -35,51 +35,21 @@ We believe that you should use LineScript because it provides a crisp, clean alt
 ```html
 <!doctype html>
 <html>
-<head>
-    <title>Example Domain</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-    body {
-        background-color: #f0f0f2;
-        margin: 0;
-        padding: 0;
-        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        
-    }
-    div {
-        width: 600px;
-        margin: 5em auto;
-        padding: 50px;
-        background-color: #fff;
-        border-radius: 1em;
-    }
-    a:link, a:visited {
-        color: #38488f;
-        text-decoration: none;
-    }
-    @media (max-width: 700px) {
-        body {
-            background-color: #fff;
-        }
-        div {
-            width: auto;
-            margin: 0 auto;
-            border-radius: 0;
-            padding: 1em;
-        }
-    }
-    </style>    
-</head>
-<body>
-<div>
-    <h1>Example Domain</h1>
-    <p>This domain is established to be used for illustrative examples in documents. You may use this
-    domain in examples without prior coordination or asking for permission.</p>
-    <p><a href="http://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
+    <head>
+        <title>Example Domain</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <div>
+            <h1>Example Domain</h1>
+            <p>This domain is established to be used for illustrative examples in documents. You may use this
+            domain in examples without prior coordination or asking for permission.</p>
+            <p><a href="http://www.iana.org/domains/example">More information...</a></p>
+        </div>
+    </body>
 </html>
 ```
 
@@ -91,13 +61,13 @@ meta -> viewport -> width=device-width, initial-scale=1
 link -> stylesheet -> index.css
 title -> Hello, World!
 div
- h1 -> Example Domain
- p -> This domain is established to be used for illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.
- a -> href='http://www.iana.org/domains/example' -> More information...
+    h1 -> Example Domain
+    p -> This domain is established to be used for illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.
+    a -> href='http://www.iana.org/domains/example' -> More information...
 end -> div
 ```
 
-Linked to this stylesheet:
+Both pages were linked to this stylesheet:
 
 ```css
 body {
@@ -130,7 +100,7 @@ a:link, a:visited {
 }
 ```
 
-Using LineScript's Runtime Compiler, the LineScript example displays the same exact output as the HTML example... and the developer wrote half as much code! Also, the LineScript part looks so much neater, don't you think? Writing LineScript is much nicer than HTML, and it doesn't require as much effort to write. So, why LineScript? Because it is shorter, easier, and cleaner.
+Using LineScript's Runtime Compiler, the LineScript example displays the same exact output as the HTML example... and the developer wrote nearly half as much code! Also, the LineScript part looks so much neater, don't you think? Writing LineScript is much nicer than HTML, and it doesn't require as much effort to write. So, why LineScript? Because it is shorter, easier, and cleaner.
 
 ## CSS/JS Capabilities
 
@@ -138,7 +108,7 @@ For styling documents in LineScript, you can link to external style sheets (such
 
 JavaScript can be embedded in LineScript to interact with storage, the parsed HTML, servers, and more. LineScript also includes the ability to use JavaScript libraries such as [jQuery](https://jquery.com).
 
-However, LineScript does not support embedded style sheets or scripts. All CSS or JavaScript must be written inline or in a separate document.
+However, LineScript does not support embedded style or script tags with code nested in them. All CSS or JavaScript must be written inline or in a separate document.
 
 ## Usage
 
