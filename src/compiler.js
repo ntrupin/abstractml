@@ -113,14 +113,6 @@ function parse(cv) {
       return "";
       break;
     case "script":
-    case "style":
-			ss = document.createElement(tagname)
-			ss.src = stripEmpty`${part[1]}`
-			console.log(ss)
-			ss = document.body.appendChild(ss)
-      return ""
-      break;
-    case "headscript":
       switch(part[2]) {
         case null:
         case undefined:
