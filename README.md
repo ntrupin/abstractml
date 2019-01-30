@@ -2,8 +2,6 @@
 
 ![](https://img.shields.io/github/stars/ntrupin/LineScript.svg) ![](https://img.shields.io/github/forks/ntrupin/LineScript.svg) [![APMVersion](https://img.shields.io/apm/v/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) [![APMDownloads](https://img.shields.io/apm/dm/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) ![](https://img.shields.io/github/license/ntrupin/LineScript.svg)
 
-<img align="center" src="https://github.com/ntrupin/linescript/blob/master/images/E81C9271-1AFE-487E-BDB0-5958E02F0ADB.jpeg?raw=true" />
-
 The open source markup language that complies into HTML at runtime, providing beautiful, easy syntax to create webpages.
 
 Like it? Leave us a star, it will help attract more visitors and contributors! 
