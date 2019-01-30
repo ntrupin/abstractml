@@ -2,12 +2,28 @@
 
 Updates are descending from most recent.
 
+## 0.2.4
+all by @ntrupin {LineScript}
+
+### Compiler Changes
+
+- **-breaking change-** Removed the style tag
+- **-breaking change-** Consolidated headscript and script tags. Now all scripts are placed in the head. File an issue if you would like to revert this change.
+- Added the small tag
+- Added the bold (b) tag
+- Added the underline (u) tag
+
+### Bug Fixes
+
+- Fixed a bug where the script tag would be injected without the url
+- Fixed a bug where the li tag would not be able to be left open. Now, a period (.) is the placeholder to do so.
+
 ## 0.2.3
 all by @ntrupin {LineScript}
 
 ### Compiler Changes
 
-- **-breaking change -** Consolidated gate.js and compiler.js
+- **-breaking change-** Consolidated gate.js and compiler.js
 
 ### Miscellaneous Changes
 
