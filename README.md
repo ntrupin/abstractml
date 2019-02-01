@@ -1,4 +1,5 @@
 # AbstractML
+*AbstractML: Abstract Markup Language*
 
 ![](https://img.shields.io/github/stars/ntrupin/abstractml.svg) ![](https://img.shields.io/github/forks/ntrupin/abstractml.svg) [![APMVersion](https://img.shields.io/apm/v/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) [![APMDownloads](https://img.shields.io/apm/dm/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) ![](https://img.shields.io/github/license/ntrupin/abstractml.svg)
 
