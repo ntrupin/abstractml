@@ -2,6 +2,18 @@
 
 Updates are descending from most recent.
 
+## 0.2.5
+all by @ntrupin {LineScript}
+
+### Compiler Changes
+
+- Added the pre tag
+- Added the code tag
+
+### Bug Fixes
+
+- Fixed a bug where free text nodes included their indentation on the page.
+
 ## 0.2.4
 all by @ntrupin {LineScript}
 
