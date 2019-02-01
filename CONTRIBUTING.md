@@ -12,7 +12,7 @@ The entire script uses cases and switched, to provide smooth flowing through dif
 
 ### Fork
 
-This is where you start contributing. To fork the repository, click the button in the top right corner of the main page of the repository. This will create a clone of LineScript under your name, with you as the owner. 
+This is where you start contributing. To fork the repository, click the button in the top right corner of the main page of the repository. This will create a clone of AbstractML under your name, with you as the owner. 
 
 A fork is a branch of a repository where you can edit whatever you want without it affecting the overall project. While this may be true, you are discouraged from doing so, as it will render you unable to submit a pull request to push your changes. 
 
@@ -24,56 +24,67 @@ This is where your contribution takes place. You will be writing in the compiler
 
 #### Add
 
-If you are adding to the code, navigate to the bottom of the document. Make sure you are still inside the parse() function. This is where you will make your entry. Copy and paste code from another section of the document and add it to the bottom. Once the formatting is set up how you feel is correct, you may edit the values in your copied function to encompass a new tag. For example, if you copied the "1" tag and are creating a "3" tag, you would change 
+If you are adding to the code, navigate to the bottom of the document. Make sure you are still inside the parse() function. This is where you will make your entry. Copy and paste code from another section of the document and add it to the bottom. Once the formatting is set up how you feel is correct, you may edit the values in your copied function to encompass a new tag. For example, if you copied the "u" tag and are creating a "b" tag, you would change 
 
 **This**
 
 ```javascript
-  case "1":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h1>" + c[1] + "</h1>"
-     return output;
-     break;
-    default:
-     output = "<h1 " + v[1] + ">" + c[1] + "</h1>"
-     return output;
-     break;
-   }
+  case "u":
+      switch(part[2]) {
+        case null:
+        case undefined:
+          return stripEmpty`<${tagname}>${part[1]}</${tagname}>`;
+          break;
+        default:
+          switch(part[2].replace(/\s/g,'')) {
+            case '':
+            case '.':
+            case ' ':
+              return stripEmpty`<${tagname} ${part[1]}>`;
+              break;
+            default:
+              return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
+              break;
+          }
+      }
 ```
 
 to **This**
 
 ```javascript
-  case "3":
-   switch(v[1]) {
-    case undefined:
-    case null:
-     output = "<h3>" + c[1] + "</h3>"
-     return output;
-     break;
-    default:
-     output = "<h3 " + v[1] + ">" + c[1] + "</h3>"
-     return output;
-     break;
-   }
+  case "b":
+      switch(part[2]) {
+        case null:
+        case undefined:
+          return stripEmpty`<${tagname}>${part[1]}</${tagname}>`;
+          break;
+        default:
+          switch(part[2].replace(/\s/g,'')) {
+            case '':
+            case '.':
+            case ' ':
+              return stripEmpty`<${tagname} ${part[1]}>`;
+              break;
+            default:
+              return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
+              break;
+          }
+      }
 ```
 
 Or, you may also write your own function from scratch, and include your own special functionality. It all depends on what you think you can do! Just make sure to comment and commit descriptively, so it is crystal-clear what you did. 
 
 #### Edit
 
-If you find a bug in a function, or just want to make it more practical or add on, you can edit existing functions! This can be done by simply editing values in a function of adding more cases to it. The more cases in a function, the more powerful it is. For example, if you wanted to add styles to a "1" tag, you would change
+If you find a bug in a function, or just want to make it more practical or add on, you can edit existing functions! This can be done by simply editing values in a function of adding more cases to it. The more cases in a function, the more powerful it is. For example, if you wanted to add just text to a "h1" tag, you would change
 
 **This**
 
 ```javascript
-  case "1":
-   switch(v[1]) {
+  case "h1":
+   switch(part[1]) {
     default:
-     output = "<h1 " + v[1] + ">" + c[1] + "</h1>"
-     return output;
+     return stripEmpty`<h1 ${part[1]}>${part[2]}</h1>`;
      break;
    }
 ```
@@ -81,16 +92,14 @@ If you find a bug in a function, or just want to make it more practical or add o
 to **This**
 
 ```javascript
-  case "1":
-   switch(v[1]) {
-    case undefined:
+  case "h1":
+   switch(part[2]) {
     case null:
-     output = "<h1>" + c[1] + "</h1>"
-     return output;
+    case undefined:
+     return stripEmpty`<h1>${part[1]}</h1>`;
      break;
     default:
-     output = "<h1 " + v[1] + ">" + c[1] + "</h1>"
-     return output;
+     return stripEmpty`<h1 ${part[1]}>${part[2]}</h1>`;
      break;
    }
 ```
@@ -101,4 +110,4 @@ After you have completed your changes, it is time to create a pull request. In y
 
 ### You're Done!
 
-Congratulations! You finished making your first open source contribution to LineScript! We'd love if you starred the repository (to attract more contributors) or contributed again, to make it even better!
+Congratulations! You finished making your first open source contribution to AbstractML! We'd love if you starred the repository (to attract more contributors) or contributed again, to make it even better!
