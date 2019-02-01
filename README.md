@@ -111,9 +111,9 @@ JavaScript can be embedded in AbstractML to interact with storage, the parsed HT
 
 However, AbstractML does not support embedded style or script tags with code nested in them. All CSS or JavaScript must be written inline or in a separate document.
 
-## Usage
+## Documentation
 
-See DOCS.md.
+The documentation can be found [here](https://ntrupin.github.io/abstractml).
 
 ## Contributing
 
