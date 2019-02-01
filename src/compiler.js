@@ -12,10 +12,10 @@ function parse(cv) {
     case "a":
     case "abbr":
     case "button":
-    case "li":
-		case "small":
-		case "b":
-		case "u":
+    case "li":	
+    case "small":
+    case "b":
+    case "u":
       switch(part[2]) {
         case null:
         case undefined:
