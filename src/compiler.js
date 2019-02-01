@@ -13,9 +13,9 @@ function parse(cv) {
     case "abbr":
     case "button":
     case "li":
-    case "small":
-    case "b":
-    case "u":
+		case "small":
+		case "b":
+		case "u":
       switch(part[2]) {
         case null:
         case undefined:
@@ -44,6 +44,8 @@ function parse(cv) {
     case "th":
     case "tr":
     case "td":
+		case "pre":
+		case "code":
       switch(part[2]) {
         case null:
         case undefined:
@@ -57,7 +59,7 @@ function parse(cv) {
               return stripEmpty`<${tagname} ${part[1]}></${tagname}>`;
               break;
             default:
-              return stripEmpty`<${tagname} ${part[1]}>${part[2]}`;
+              return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
               break;
           }
       }
@@ -150,12 +152,12 @@ function parse(cv) {
         return stripEmpty`</${part[1]}>`;
         break;
     case "":
-      return stripEmpty`${part[0]}`;
+      return stripEmpty`${tagname}`;
       break;
     case undefined:
     case null:
     default:
-      return stripEmpty`${part[0]}`;
+      return stripEmpty`${tagname}`;
       break;
   }
 }
