@@ -44,8 +44,8 @@ function parse(cv) {
     case "th":
     case "tr":
     case "td":
-		case "pre":
-		case "code":
+    case "pre":
+    case "code":
       switch(part[2]) {
         case null:
         case undefined:
@@ -176,7 +176,7 @@ function stripEmpty (stringsArg,...inputsArg) {
 }
 
 function build(filename) {
- var getPage = new Request(filename + '.osls');
+ var getPage = new Request(filename + '.aml');
   fetch(getPage).then(function(response) {
     return response.text().then(function(text) {
       y = text.split("\n")
@@ -191,9 +191,9 @@ function build(filename) {
   });
 }
 
-// THIS IS THE OLD METHOD OF FETCHING THE OSLS FILE, KEPT HERE FOR REFERENCE
+// THIS IS THE OLD METHOD OF FETCHING THE AML FILE, KEPT HERE FOR REFERENCE
 /* var xmlhttp;
 xmlhttp=new XMLHttpRequest();
-xmlhttp.open('GET', "./" + filename + ".osls", false);
+xmlhttp.open('GET', "./" + filename + ".aml", false);
 xmlhttp.send();
 x = xmlhttp.responseText */
