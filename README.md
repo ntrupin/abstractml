@@ -1,9 +1,9 @@
 # AbstractML
 *AbstractML: Abstract Markup Language*
 
-![](https://img.shields.io/github/stars/ntrupin/abstractml.svg) ![](https://img.shields.io/github/forks/ntrupin/abstractml.svg) [![APMVersion](https://img.shields.io/apm/v/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) [![APMDownloads](https://img.shields.io/apm/dm/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) ![](https://img.shields.io/github/license/ntrupin/abstractml.svg)
+![](https://img.shields.io/github/stars/abstractml/abstractml.svg) ![](https://img.shields.io/github/forks/abstractml/abstractml.svg) [![APMVersion](https://img.shields.io/apm/v/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) [![APMDownloads](https://img.shields.io/apm/dm/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) ![](https://img.shields.io/github/license/abstractml/abstractml.svg)
 
-The open source markup language that complies into HTML at runtime, providing beautiful, easy syntax to create webpages.
+An HTML abstraction focused on simplicity, providing beautiful, easy syntax to create webpages.
 
 Like it? Leave us a star, it will help attract more visitors and contributors! 
 
@@ -113,7 +113,7 @@ However, AbstractML does not support embedded style or script tags with code nes
 
 ## Documentation
 
-The documentation can be found [here](https://ntrupin.github.io/abstractml).
+The documentation can be found [here](https://abstractml.github.io/abstractml/).
 
 ## Contributing
 
