@@ -9,6 +9,12 @@ all by @ntrupin {LineScript}
 
 - Added the pre tag
 - Added the code tag
+- Optimized script fetching time
+
+### Miscellaneous Changes
+
+- Made an AbstractML website
+- Created and finished to documentation (for now)
 
 ### Bug Fixes
 
@@ -20,7 +26,7 @@ all by @ntrupin {LineScript}
 ### Compiler Changes
 
 - **-breaking change-** Removed the style tag
-- **-breaking change-** Consolidated headscript and script tags. Now all scripts are placed in the head. File an issue if you would like to revert this change.
+- **-breaking change-** Consolidated headscript and script tags. Now all scripts are placed in the head. File an issue if you would like to revert this change
 - Added the small tag
 - Added the bold (b) tag
 - Added the underline (u) tag
