@@ -11,7 +11,7 @@ Using AbstractML, you can write markup both more simple and more readable, provi
 
 In short, it allows you to replace this:
 
-<img src="/docs/C836C369-DD74-4A58-A588-4858A8F11398.png" align="right" height="280px" hspace="30px" max-width="75%" vspace="30px">
+<img src="/docs/DBA72F07-A2FB-4B59-B26D-B96855CEFD68.jpeg" align="right" height="280px" hspace="30px" max-width="75%" vspace="30px">
 
 ```html
 <!DOCTYPE html>
