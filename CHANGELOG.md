@@ -1,9 +1,22 @@
 # Changelog
 
-Updates are descending from most recent.
+*Wondering why it says (thanks, @user) for some updates but only (@ntrupin) for others? I'm @ntrupin, the admin. I feel wrong thanking myself, but I do appreciate what everyone else has done.*
+
+**Note:** Updates are descending from most recent.
+
+## 0.2.6
+thanks, @Snewkis
+
+### Compiler Changes
+
+- Added strikethrough (s) tag
+- Added strong tag
+- Added section tag
+- Added article tag
+- Added time tag
 
 ## 0.2.5
-all by @ntrupin {LineScript}
+all by @ntrupin
 
 ### Compiler Changes
 
@@ -21,7 +34,7 @@ all by @ntrupin {LineScript}
 - Fixed a bug where free text nodes included their indentation on the page.
 
 ## 0.2.4
-all by @ntrupin {LineScript}
+all by @ntrupin
 
 ### Compiler Changes
 
@@ -37,7 +50,7 @@ all by @ntrupin {LineScript}
 - Fixed a bug where the li tag would not be able to be left open. Now, a period (.) is the placeholder to do so.
 
 ## 0.2.3
-all by @ntrupin {LineScript}
+all by @ntrupin
 
 ### Compiler Changes
 
@@ -52,7 +65,7 @@ all by @ntrupin {LineScript}
 - Fixed a bug where the highlighter's TextMate Scopes did not align with its color
 
 ## 0.2.2
-all by @ntrupin {LineScript}
+all by @ntrupin
 
 ### Miscellaneous Changes
 
@@ -60,7 +73,7 @@ all by @ntrupin {LineScript}
 - Refactored the syntax highlighter for CoffeeScript, Python, Ruby, XML, and YAML
 
 ## 0.2.1
-all by @ntrupin {LineScript}
+all by @ntrupin
 
 ### Documentation Changes
 
@@ -70,23 +83,23 @@ all by @ntrupin {LineScript}
 
 ### Compiler Changes
 
-- **-breaking change-** Completely revamped the compiler, making the contribution, development, and usage process much smoother and simpler (@ntrupin {LineScript})
-- **-breaking change-** Changed the method of splitting the commands (@ntrupin {LineScript})
-- **-breaking change-** Added the ability for almost any element to be nested, alone, self-closing, styled, or text-containing (@ntrupin {LineScript})
-- Added style tag (@ntrupin {LineScript})
+- **-breaking change-** Completely revamped the compiler, making the contribution, development, and usage process much smoother and simpler (@ntrupin)
+- **-breaking change-** Changed the method of splitting the commands (@ntrupin)
+- **-breaking change-** Added the ability for almost any element to be nested, alone, self-closing, styled, or text-containing (@ntrupin)
+- Added style tag (@ntrupin)
 - Added ul tag (thanks, @nmacarthur)
 - Added ol tag (thanks, @nmacarthur)
 - Added li tag (thanks, @nmacarthur)
-- Added headscript tag (@ntrupin {LineScript})
-- Added section tag (@ntrupin {LineScript})
-- Added nav tag (@ntrupin {LineScript})
-- Added main tag (@ntrupin {LineScript})
-- Added header tag (@ntrupin {LineScript})
-- Added hr tag (@ntrupin {LineScript})
-- Added the ability to write text outside of tags (@ntrupin {LineScript})
-- Added the ability to have empty elements (@ntrupin {LineScript})
-- Added comment tag (@ntrupin {LineScript})
-- Simplified end sequence (@ntrupin {LineScript})
+- Added headscript tag (@ntrupin)
+- Added section tag (@ntrupin)
+- Added nav tag (@ntrupin)
+- Added main tag (@ntrupin)
+- Added header tag (@ntrupin)
+- Added hr tag (@ntrupin)
+- Added the ability to write text outside of tags (@ntrupin)
+- Added the ability to have empty elements (@ntrupin)
+- Added comment tag (@ntrupin)
+- Simplified end sequence (@ntrupin)
 
 ### Bug Fixes
 
@@ -97,10 +110,10 @@ all by @ntrupin {LineScript}
 ### Compiler Changes
 
 - **-breaking change-** Rerouted the compiler's parsing process and greatly reduced pageload speed (thanks, @Yamboy1)
-- Made the compiler code prettier (@ntrupin {LineScript})
+- Made the compiler code prettier (@ntrupin)
 
 ## 0.1.1 
-all by @ntrupin {LineScript}
+all by @ntrupin
 
 ### Bug Fixes
 
@@ -111,8 +124,8 @@ all by @ntrupin {LineScript}
 
 ### Compiler Changes
 
-- **-breaking change-** Slashed over 100 lines of code from the compiler to make it more concise (blueprint: @Yamboy1 ; execution: @ntrupin {LineScript})
-- **-breaking change-** Converted the compiler from string pasting to template literals (blueprint: @Yamboy1 ; execution: @ntrupin {LineScript})
+- **-breaking change-** Slashed over 100 lines of code from the compiler to make it more concise (blueprint: @Yamboy1 ; execution: @ntrupin)
+- **-breaking change-** Converted the compiler from string pasting to template literals (blueprint: @Yamboy1 ; execution: @ntrupin)
 
 ## 0.0.4 
 thanks, @Mofiqul
@@ -137,16 +150,16 @@ thanks, @Mofiqul
 
 ### Compiler Changes
 
-- Added Nested and Positive capability to Span Tag (@ntrupin {LineScript})
+- Added Nested and Positive capability to Span Tag (@ntrupin)
 - Added img Tag (thanks, @Yamboy1)
 
 ### Bug Fixes
 
-- Fixed fatal error in Paragraph Tag (@ntrupin {LineScript})
+- Fixed fatal error in Paragraph Tag (@ntrupin)
 
 ### Documentation Changes
 
-- Added Span Tag to documentation (@ntrupin {LineScript})
+- Added Span Tag to documentation (@ntrupin)
 - Added img Tag to documentation (thanks, @Yamboy1)
 
 ## 0.0.2 
@@ -164,14 +177,14 @@ thanks, @Yamboy1
 
 ### Bug Fixes
 
-- Bug fixes (@ntrupin {LineScript})
+- Bug fixes (@ntrupin)
 
 ### Compiler Changes
 
 - Added Span Tag (thanks, @jmona789)
 
 ## 0.0.0
-all by @ntrupin {LineScript}
+all by @ntrupin
 
 - Created Compiler
 - Created gate
