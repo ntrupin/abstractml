@@ -5,11 +5,23 @@
 **Note:** Updates are descending from most recent.
 
 ## 0.2.7
-thanks, @Snewkis
+
+### Miscellaneous Changes
+
+- Started working on a new precompiler, written in C
 
 ### Bug Fixes
 
-- Fixed a bug where charset was converted to an empty meta tag
+- Fixed a bug where charset was converted to an empty meta tag (thanks, @Snewkis)
+
+### Documentation Changes
+
+- Added stikethrough (s) tag to documentation (@ntrupin)
+- Added section tag to documentation (@ntrupin)
+- Added article tag to documentation (@ntrupin)
+- Added time tag to documentation (@ntrupin)
+- Added strong tag to documentation (@ntrupin)
+- Made the documentation menu mobile-friendly (@ntrupin)
 
 ## 0.2.6
 thanks, @Snewkis
@@ -34,7 +46,11 @@ all by @ntrupin
 ### Miscellaneous Changes
 
 - Made an AbstractML website
+
+### Documentation Changes
+
 - Created and finished to documentation (for now)
+- Removed DOCS.md
 
 ### Bug Fixes
 
@@ -51,10 +67,14 @@ all by @ntrupin
 - Added the bold (b) tag
 - Added the underline (u) tag
 
+### Miscellaneous Changes
+
+- Removed experimental syntax highlighters from the repository.
+
 ### Bug Fixes
 
 - Fixed a bug where the script tag would be injected without the url
-- Fixed a bug where the li tag would not be able to be left open. Now, a period (.) is the placeholder to do so.
+- Fixed a bug where the li tag would not be able to be left open. Now, a period (.) is the placeholder to do so
 
 ## 0.2.3
 all by @ntrupin
@@ -66,6 +86,7 @@ all by @ntrupin
 ### Miscellaneous Changes
 
 - Added syntax highlighting support for GitHub's Atom editor
+- Moved the syntax highlighters to a seperate repository
 
 ### Bug Fixes
 
