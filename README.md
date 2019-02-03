@@ -1,11 +1,36 @@
 # AbstractML
 *AbstractML: Abstract Markup Language*
 
-![](https://img.shields.io/github/stars/abstractml/abstractml.svg) ![](https://img.shields.io/github/forks/abstractml/abstractml.svg) [![APMVersion](https://img.shields.io/apm/v/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) [![APMDownloads](https://img.shields.io/apm/dm/linescript-grammar.svg)](https://atom.io/packages/linescript-grammar) ![](https://img.shields.io/github/license/abstractml/abstractml.svg)
+![](https://img.shields.io/github/stars/abstractml/abstractml.svg) ![](https://img.shields.io/github/forks/abstractml/abstractml.svg)
 
 An HTML abstraction focused on simplicity, providing beautiful, easy syntax to create webpages.
 
 Like it? Leave us a star, it will help attract more visitors and contributors! 
+
+Using AbstractML, you can write markup both more simple and more readable, providing a more straightforward way to design beautiful webpages!
+
+In short, it allows you to replace this:
+
+<img src="/docs/C836C369-DD74-4A58-A588-4858A8F11398.png" align="right" height="280px" hspace="30px" vspace="30px">
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Hello, world!</h1>
+        <hr>
+        <p>This is HTML</p>
+    </body>   
+</html>
+```
+
+with this
+
+```CSS
+h1 -> Hello, world!
+hr
+p -> This is AbstractML!
+```
 
 ## Our Mission
 
@@ -34,7 +59,7 @@ The structure of the document is inspired by a combination of [Elm](https://elm-
 We believe that you should use AbstractML because it provides a crisp, clean alternative to boring old HTML. What could be done in HTML with this:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Example Domain</title>
