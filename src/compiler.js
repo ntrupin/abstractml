@@ -102,7 +102,7 @@ function parse(cv) {
     case "charset":
       meta = document.createElement("meta");
       meta = document.getElementsByTagName("head")[0].appendChild(meta);
-      meta.charset = stripEmpty`${part[1]}`;
+      meta["httpEquiv"] = stripEmpty`${part[1]}`;
       return "";
     break;
     case "link":
