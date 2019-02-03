@@ -102,9 +102,10 @@ function parse(cv) {
     case "charset":
       meta = document.createElement("meta");
       meta = document.getElementsByTagName("head")[0].appendChild(meta);
-      meta.charset = stripEmpty`${part[1]}`;
+      meta["httpEquiv"] = "Content-Type";
+      meta.content = stripEmpty`text/html; charset=${part[1]}`;
       return "";
-    break;
+      break;
     case "link":
       link = document.createElement("link")
       link = document.getElementsByTagName("head")[0].appendChild(link)
