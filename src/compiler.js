@@ -9,12 +9,15 @@ function parse(cv) {
     case "h5":
     case "h6":
     case "p":
+    case "time":
     case "a":
     case "abbr":
     case "button":
     case "li":	
     case "small":
     case "b":
+    case "s":
+    case "strong":
     case "u":
       switch(part[2]) {
         case null:
@@ -34,6 +37,8 @@ function parse(cv) {
           }
       }
     case "div":
+    case "section":
+    case "article":
     case "span":
     case "center":
     case "header":
