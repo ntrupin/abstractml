@@ -4,6 +4,13 @@
 
 **Note:** Updates are descending from most recent.
 
+## 0.2.7
+thanks, @Snewkis
+
+### Bug Fixes
+
+- Fixed a bug where charset was converted to an empty meta tag
+
 ## 0.2.6
 thanks, @Snewkis
 
