@@ -1,7 +1,6 @@
 link -> stylesheet -> https://ntrupin.com/normalize.css
 link -> stylesheet -> https://ntrupin.com/skeleton.css
 link -> stylesheet -> style.css
-script -> again.js -> defer
 meta -> viewport -> width=device-width, initial-scale=1
 charset -> utf-8
 div
