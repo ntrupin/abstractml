@@ -35,7 +35,7 @@ end -> div
 hr
 div -> class="grid-container"
 	div -> class="grid-item"
-		button -> onclick="window.location.href='https://github.com/abstractml/abstractml'" class="button-primary" -> GitHub
+		button -> onclick="window.location.href='https://github.com/abstractml/abstractml/blob/master/docs/examples/landing.aml'" class="button-primary" -> GitHub
 	end -> div
 	div -> class="grid-item"
 		button -> onclick="window.location.href='https://ntrupin.com'" class="button-primary" -> ntrupin.com
