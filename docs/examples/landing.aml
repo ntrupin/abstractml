@@ -1,0 +1,50 @@
+link -> stylesheet -> https://ntrupin.com/normalize.css
+link -> stylesheet -> https://ntrupin.com/skeleton.css
+link -> stylesheet -> style.css
+script -> again.js -> defer
+meta -> viewport -> width=device-width, initial-scale=1
+charset -> utf-8
+div
+	h4 -> AbstractML
+	div
+	p -> style="float: left;margin:10px" -> .
+		img -> https://github.com/abstractml/abstractml/blob/master/docs/DBA72F07-A2FB-4B59-B26D-B96855CEFD68.jpeg?raw=true -> style="height:100px;display:inline;"
+	end -> p
+	p -> style="display:inline" -> An HTML abstraction focused on simplicity, with support for JavaScript and CSS, created to provide a straightforward way to write beautiful webpages. Perfect for experts and beginners!
+	end -> div
+	pre 
+		code
+			Hello!
+		end -> code
+	end -> pre
+end -> div
+hr
+div
+	b -> About this page
+	p -> This page was created by AbstractML admin, Noah Trupin. It was made to be an example of how versatile and simple the markup language could be in creating full-fledged webpages.
+	p -> This webpage used stylesheets from three sources:
+	ul
+		li -> . -> .
+			a -> href="https://github.com/necolas/normalize.css/" -> normalize.css
+		end -> li
+		li -> . -> .
+		 a -> href="https://github.com/dhg/Skeleton" -> skeleton.css
+		end -> li
+		li -> Custom styles
+	end -> ul
+end -> div
+hr
+div -> class="grid-container"
+	div -> class="grid-item"
+		button -> onclick="window.location.href='https://github.com/abstractml/abstractml'" class="button-primary" -> GitHub
+	end -> div
+	div -> class="grid-item"
+		button -> onclick="window.location.href='https://ntrupin.com'" class="button-primary" -> ntrupin.com
+	end -> div
+end -> div
+hr
+div
+	center
+		small -> Generated with AbstractML
+	end -> center
+end -> div
