@@ -1,5 +1,5 @@
 function parse(cv) {
-  part = cv.toString().split(" -> ")
+  part = cv.toString().split("->")
   tagname = part[0].replace(/\s/g,'')
   switch(tagname) {
     case "h1":
