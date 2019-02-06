@@ -52,7 +52,7 @@ function parse(cv) {
     case "pre":
     case "code":
     case "ol":
-    case "ul"
+    case "ul":
       switch(part[2]) {
         case null:
         case undefined:
