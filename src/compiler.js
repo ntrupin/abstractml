@@ -51,6 +51,8 @@ function parse(cv) {
     case "td":
     case "pre":
     case "code":
+    case "ol":
+    case "ul"
       switch(part[2]) {
         case null:
         case undefined:
@@ -70,10 +72,6 @@ function parse(cv) {
       }
     case "img":
       return stripEmpty`<${tagname} src='${part[1]}' ${part[2]} />`;
-      break;
-    case "ol":
-    case "ul":
-      return stripEmpty`<${tagname} '${part[1]}'>`;
       break;
     case "input":
       return stripEmpty`<${tagname} ${part[1]}/>`;
