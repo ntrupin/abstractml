@@ -194,7 +194,7 @@ const char * parse(char * gotten) {
             return concat4("<", array[0], array[1], " />");
         }
     } else {
-        //return array;
+        return (char*)*array;
     }
 }
 
