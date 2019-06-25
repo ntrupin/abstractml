@@ -3,6 +3,8 @@
 
 ![](https://img.shields.io/github/stars/abstractml/abstractml.svg) ![](https://img.shields.io/github/forks/abstractml/abstractml.svg)
 
+### We're looking for someone to help build the precompiler. If you would like to help, please open an issue.
+
 An HTML abstraction focused on simplicity, providing beautiful, easy syntax to create webpages.
 
 Like it? Leave us a star, it will help attract more visitors and contributors! 
