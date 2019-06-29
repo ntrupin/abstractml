@@ -52,8 +52,8 @@ div -> class="container"
     end -> div
   end -> div
 end -> div
-script -> src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-script -> src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-script -> src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+script -> https://code.jquery.com/jquery-3.3.1.slim.min.js
+script -> https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js
+script -> https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js
 
 // -> This is a demonstration of LineScript using Bootstrap 4!
