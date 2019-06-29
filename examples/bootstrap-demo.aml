@@ -1,9 +1,7 @@
-head
 charset -> utf-8
 meta -> viewport -> width=device-width, initial-scale=1, shrink-to-fit=no
 link -> stylesheet -> https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css
 title -> Hello, world
-end -> head
 nav -> class="navbar navbar-light bg-light"
   a -> class="navbar-brand" href="#" -> .
     img -> https://raw.githubusercontent.com/ntrupin/LineScript/master/images/360D4164-622D-49A3-88CE-20DFC84BF503.png -> width="30" height="30" class="d-inline-block align-top" alt=""
