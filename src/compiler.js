@@ -152,7 +152,7 @@ const build = program => {
   }
 };
 
-function stripEmpty(stringsArg, ...inputsArg) {
+const stripEmpty = (stringsArg, ...inputsArg) => {
   let str = "";
   let strings = Array.from(stringsArg);
   let inputs = Array.from(inputsArg);
