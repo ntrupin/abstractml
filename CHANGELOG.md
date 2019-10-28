@@ -4,6 +4,14 @@
 
 **Note:** Updates are descending from most recent.
 
+
+## 0.2.8
+all by @NoobiCodi
+
+### Miscellaneous Changes
+
+- Added a precompiler
+
 ## 0.2.7
 
 ### Miscellaneous Changes
