@@ -1,7 +1,7 @@
 # AbstractML
 *AbstractML: Abstract Markup Language*
 
-![](https://img.shields.io/github/stars/abstractml/abstractml.svg) ![](https://img.shields.io/github/forks/abstractml/abstractml.svg)
+![](https://img.shields.io/github/stars/ntrupin/abstractml.svg) ![](https://img.shields.io/github/forks/ntrupin/abstractml.svg)
 
 ### We're looking for someone to help maintain the project. If you would like to help, please open an issue.
 
