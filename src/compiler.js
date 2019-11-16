@@ -37,10 +37,8 @@ const nests = [
   "ol",
   "ul"
 ];
-const inners = [
-  "img",
-  "input"
-]
+const inners = ["img", "input"];
+const heads = ["link", "meta", "script"];
 
 const makeStruct = vals => {
   var names = vals.split(" ");
@@ -74,7 +72,11 @@ const tokenize = line => {
         segment += " " + words[i];
         i++;
       }
-      if (i + 1 < words.length || nests.includes(words[i - 3]) || inners.includes(words[i - 3])) {
+      if (
+        i + 1 < words.length ||
+        nests.includes(words[i - 3]) ||
+        inners.includes(words[i - 3])
+      ) {
         tokens.push(new Token("args", segment));
       } else {
         tokens.push(new Token("text", segment));
@@ -92,6 +94,24 @@ const parse = cv => {
   let tag_ref = "";
   while (i < tokens.length) {
     let token = tokens[i];
+    if (token.type === "tag" && heads.includes(token.value)) {
+      tag_ref = token.value;
+      if (tokens[i + 1].type !== "args" && tokens[i + 1].type !== "text") {
+        console.error("Head elements require arguments!");
+      } else {
+        if (tag_ref === "script") {
+          document.body.innerHTML += stripEmpty`<${tag_ref} ${
+            tokens[i + 1].value
+          }></${tag_ref}>`;
+        } else {
+          document.head.innerHTML += stripEmpty`<${tag_ref} ${
+            tokens[i + 1].value
+          } />`;
+        }
+      }
+      i += 2;
+      continue;
+    }
     if (token.type === "tag" && token.value !== "end") {
       tag_ref = token.value;
       if (tokens[i + 1].type !== "args") {
@@ -163,4 +183,4 @@ const stripEmpty = (stringsArg, ...inputsArg) => {
     str += input != null ? input : "";
   }
   return str;
-}
+};
