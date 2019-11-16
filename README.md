@@ -128,7 +128,7 @@ a:link, a:visited {
 }
 ```
 
-Using AbstractML's Runtime Compiler, the AbstractML example displays the same exact output as the HTML example... and the developer wrote nearly half as much code! Also, the LineScript part looks so much neater, don't you think? Writing AbstractML is much nicer than HTML, and it doesn't require as much effort to write. So, why AbstractML? Because it is shorter, easier, and cleaner.
+Using AbstractML's Runtime Compiler, the AbstractML example displays the same exact output as the HTML example... and the developer wrote nearly half as much code! Also, the AbstractML part looks so much neater, don't you think? Writing AbstractML is much nicer than HTML, and it doesn't require as much effort to write. So, why AbstractML? Because it is shorter, easier, and cleaner.
 
 ## CSS/JS Capabilities
 
