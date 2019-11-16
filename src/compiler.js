@@ -38,7 +38,7 @@ const nests = [
   "ul"
 ];
 const inners = ["img", "input"];
-const heads = ["link", "meta", "script"];
+const heads = ["link", "meta", "script", "title"];
 
 const makeStruct = vals => {
   var names = vals.split(" ");
@@ -114,6 +114,10 @@ const parse = cv => {
     }
     if (token.type === "tag" && token.value !== "end") {
       tag_ref = token.value;
+      if (i + 1 >= tokens.length) {
+        new_tag += stripEmpty`<${token.value}>`;
+        break;
+      }
       if (tokens[i + 1].type !== "args") {
         new_tag += stripEmpty`<${token.value}>`;
       } else {
@@ -156,7 +160,7 @@ const build = program => {
         y.forEach(function(ele) {
           let output = parse(ele);
           it = it + output;
-          document.getElementById("app").innerHTML = it;
+          document.body.innerHTML = it;
         });
         console.log(it);
       });
@@ -167,7 +171,7 @@ const build = program => {
     y.forEach(function(ele) {
       let output = parse(ele);
       it = it + output;
-      document.getElementById("app").innerHTML = it;
+      document.body.innerHTML = it;
     });
   }
 };
@@ -184,3 +188,5 @@ const stripEmpty = (stringsArg, ...inputsArg) => {
   }
   return str;
 };
+
+build("../index.aml");
