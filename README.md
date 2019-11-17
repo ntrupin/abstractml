@@ -84,13 +84,13 @@ We believe that you should use AbstractML because it provides a crisp, clean alt
 Can easily be written in AbstractML like this:
 
 ```css
-charset -> utf-8
-meta -> viewport -> width=device-width, initial-scale=1
-link -> stylesheet -> index.css
+meta -> charset="utf-8"
+meta -> name="viewport" content="width=device-width, initial-scale=1"
+link -> rel="stylesheet" href="index.css"
 title -> Hello, World!
 div
     h1 -> Example Domain
-    p -> This domain is established to be used for illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.
+    p -> This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.
     a -> href='http://www.iana.org/domains/example' -> More information...
 end -> div
 ```
