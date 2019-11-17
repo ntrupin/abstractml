@@ -1,203 +1,192 @@
-function parse(cv) {
-  part = cv.toString().split(" -> ")
-  tagname = part[0].replace(/\s/g,'')
-  switch(tagname) {
-    case "h1":
-    case "h2":
-    case "h3":
-    case "h4":
-    case "h5":
-    case "h6":
-    case "p":
-    case "time":
-    case "a":
-    case "abbr":
-    case "button":
-    case "li":	
-    case "small":
-    case "b":
-    case "s":
-    case "strong":
-    case "u":
-      switch(part[2]) {
-        case null:
-        case undefined:
-          return stripEmpty`<${tagname}>${part[1]}</${tagname}>`;
-          break;
-        default:
-          switch(part[2].replace(/\s/g,'')) {
-            case '':
-            case '.':
-            case ' ':
-              return stripEmpty`<${tagname} ${part[1]}>`;
-              break;
-            default:
-              return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
-              break;
-          }
+const singles = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "p",
+  "time",
+  "a",
+  "abbr",
+  "button",
+  "li",
+  "small",
+  "b",
+  "s",
+  "strong",
+  "u",
+  "textarea"
+];
+const nests = [
+  "div",
+  "section",
+  "article",
+  "span",
+  "center",
+  "header",
+  "nav",
+  "main",
+  "form",
+  "table",
+  "th",
+  "tr",
+  "td",
+  "pre",
+  "code",
+  "ol",
+  "ul"
+];
+const inners = ["img", "input"];
+const heads = ["link", "meta", "script", "title"];
+
+const makeStruct = vals => {
+  var names = vals.split(" ");
+  var count = vals.length;
+  function constructor() {
+    for (var i = 0; i < count; i++) {
+      this[names[i]] = arguments[i];
+    }
+  }
+  return constructor;
+};
+
+const Token = makeStruct("type value");
+
+const tokenize = line => {
+  let words = line.split(" ");
+  let i = 0;
+  let tokens = [];
+  while (i < words.length) {
+    let word = words[i];
+    if (word === "->") {
+      i++;
+      continue;
+    }
+    if (i === 0) {
+      tokens.push(new Token("tag", word));
+    } else {
+      let segment = word;
+      i++;
+      while (words[i] !== "->" && i < words.length) {
+        segment += " " + words[i];
+        i++;
       }
-    case "div":
-    case "section":
-    case "article":
-    case "span":
-    case "center":
-    case "header":
-    case "nav":
-    case "main":
-    case "form":
-    case "table":
-    case "th":
-    case "tr":
-    case "td":
-    case "pre":
-    case "code":
-    case "ol":
-    case "ul":
-      switch(part[2]) {
-        case null:
-        case undefined:
-          return stripEmpty`<${tagname} ${part[1]}>`;
-          break;
-        default:
-          switch(part[2]) {
-            case '':
-            case '.':
-            case ' ':
-              return stripEmpty`<${tagname} ${part[1]}></${tagname}>`;
-              break;
-            default:
-              return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
-              break;
-          }
+      if (
+        i + 1 < words.length ||
+        nests.includes(words[i - 3]) ||
+        inners.includes(words[i - 3])
+      ) {
+        tokens.push(new Token("args", segment));
+      } else {
+        tokens.push(new Token("text", segment));
       }
-    case "img":
-      return stripEmpty`<${tagname} src='${part[1]}' ${part[2]} />`;
-      break;
-    case "input":
-      return stripEmpty`<${tagname} ${part[1]}/>`;
-      break;
-    case "textarea":
-      return stripEmpty`<${tagname} ${part[1]}>${part[2]}</${tagname}>`;
-      break;
-    case "br":
-    case "hr":
-      switch(part[1]) {
-        case null:
-        case undefined:
-          return stripEmpty`<${tagname}>`;
-          break;
-        default:
-          return stripEmpty`<${tagname} ${part[1]}>`;
-          break;
-      }
-    case "meta":
-      meta = document.createElement("meta");
-      meta = document.getElementsByTagName("head")[0].appendChild(meta);
-      meta.name = stripEmpty`${part[1]}`;
-      meta.content = stripEmpty`${part[2]}`;
-      return "";
-      break;
-    case "charset":
-      meta = document.createElement("meta");
-      meta = document.getElementsByTagName("head")[0].appendChild(meta);
-      meta["httpEquiv"] = "Content-Type";
-      meta.content = stripEmpty`text/html; charset=${part[1]}`;
-      return "";
-      break;
-    case "link":
-      link = document.createElement("link")
-      link = document.getElementsByTagName("head")[0].appendChild(link)
-      link.rel = stripEmpty`${part[1]}`
-      link.href = stripEmpty`${part[2]}`
-      return "";
-      break;
-    case "bodystyle":
-      document.getElementsByTagName("body")[0].style = stripEmpty`${part[1]}`
-      return "";
-      break;
-    case "title":
-      title = document.createElement("title")
-      title = document.getElementsByTagName("head")[0].appendChild(title)
-      title.innerHTML = stripEmpty`${part[1]}`
-      return "";
-      break;
-    case "script":
-      switch(part[2]) {
-        case null:
-        case undefined:
-          script = document.createElement("script")
-          script = document.getElementsByTagName("head")[0].appendChild(script)
-          script.src = stripEmpty`${part[1]}`
-          return "";
-          break;
-        default:
-          switch(part[2]) {
-            case '':
-            case 'defer':
-            case ' ':
-              script = document.createElement("script")
-              script = document.getElementsByTagName("head")[0].appendChild(script)
-              script.defer = true
-              script.src = stripEmpty`${part[1]}`
-            return "";
-            break;
-            default:
-              script = document.createElement("script")
-              script = document.getElementsByTagName("head")[0].appendChild(script)
-              script.src = stripEmpty`${part[1]}`
-              return "";
-              break;
+    }
+    i++;
+  }
+  return tokens;
+};
+
+const parse = cv => {
+  let tokens = tokenize(cv);
+  let i = 0;
+  let new_tag = "";
+  let tag_ref = "";
+  while (i < tokens.length) {
+    let token = tokens[i];
+    if (token.type === "tag" && heads.includes(token.value)) {
+      tag_ref = token.value;
+      if (tokens[i + 1].type !== "args" && tokens[i + 1].type !== "text") {
+        console.error("Head elements require arguments!");
+      } else {
+        if (tag_ref === "script") {
+          document.body.innerHTML += stripEmpty`<${tag_ref} ${
+            tokens[i + 1].value
+          }></${tag_ref}>`;
+        } else {
+          document.head.innerHTML += stripEmpty`<${tag_ref} ${
+            tokens[i + 1].value
+          } />`;
         }
       }
-    case "//":
-      return stripEmpty`<!-- ${part[1]} -->`;
-      break;
-    case "end":
-        return stripEmpty`</${part[1]}>`;
+      i += 2;
+      continue;
+    }
+    if (token.type === "tag" && token.value !== "end") {
+      tag_ref = token.value;
+      if (i + 1 >= tokens.length) {
+        new_tag += stripEmpty`<${token.value}>`;
         break;
-    case "":
-      return stripEmpty`${tagname}`;
-      break;
-    case undefined:
-    case null:
-    default:
-      return stripEmpty`${tagname}`;
-      break;
+      }
+      if (tokens[i + 1].type !== "args") {
+        new_tag += stripEmpty`<${token.value}>`;
+      } else {
+        new_tag += stripEmpty`<${token.value} `;
+      }
+    } else if (token.type === "args") {
+      if (inners.includes(tag_ref)) {
+        new_tag += `${token.value} />`;
+      } else {
+        new_tag += `${token.value}>`;
+      }
+    } else if (token.type === "text") {
+      if (singles.includes(tag_ref)) {
+        new_tag += `${token.value}`;
+      } else if (nests.includes(tag_ref)) {
+        if (token.value === ".") {
+          new_tag += `</${tag_ref}>`;
+        } else {
+          new_tag += `${token.value}`;
+        }
+      }
+    } else if (token.type === "tag" && token.value === "end") {
+      new_tag += `</${tokens[i + 1].value}>`;
+    }
+    i++;
   }
-}
+  if (singles.includes(tag_ref)) {
+    new_tag += `</${tag_ref}>`;
+  }
+  return new_tag;
+};
 
-function stripEmpty (stringsArg,...inputsArg) {
+const build = program => {
+  if (!program.includes("\n") && program.includes(".aml")) {
+    var getPage = new Request(program);
+    fetch(getPage).then(function(response) {
+      return response.text().then(function(text) {
+        let y = text.split("\n");
+        let it = "";
+        y.forEach(function(ele) {
+          let output = parse(ele);
+          it = it + output;
+          document.body.innerHTML = it;
+        });
+        console.log(it);
+      });
+    });
+  } else {
+    let y = program.split("\n");
+    let it = "";
+    y.forEach(function(ele) {
+      let output = parse(ele);
+      it = it + output;
+      document.body.innerHTML = it;
+    });
+  }
+};
+
+const stripEmpty = (stringsArg, ...inputsArg) => {
   let str = "";
   let strings = Array.from(stringsArg);
   let inputs = Array.from(inputsArg);
   while (strings.length || inputs.length) {
     const string = strings.shift();
-    str += string!=null?string:"";
+    str += string != null ? string : "";
     const input = inputs.shift();
-    str += input!=null?input:"";
+    str += input != null ? input : "";
   }
   return str;
-}
+};
 
-function build(filename) {
- var getPage = new Request(filename + '.aml');
-  fetch(getPage).then(function(response) {
-    return response.text().then(function(text) {
-      y = text.split("\n")
-      it = "";
-      y.forEach(function(ele) {
-        output = parse(ele)
-        it = it + output
-        document.getElementById("line").innerHTML = it
-      });
-			console.log(document.getElementById("whole").innerHTML)
-    });
-  });
-}
-
-// THIS IS THE OLD METHOD OF FETCHING THE AML FILE, KEPT HERE FOR REFERENCE
-/* var xmlhttp;
-xmlhttp=new XMLHttpRequest();
-xmlhttp.open('GET', "./" + filename + ".aml", false);
-xmlhttp.send();
-x = xmlhttp.responseText */
+build("../index.aml");
