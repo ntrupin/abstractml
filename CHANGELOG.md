@@ -4,6 +4,19 @@
 
 **Note:** Updates are descending from most recent.
 
+## 0.3.0
+all by @ntrupin
+
+### Compiler Changes
+
+- Rewrote the entire compiler using ES6 and better principles.
+- **-breaking change-** Removed the charset tag. Now it is a trait for meta.
+- **-breaking change-** Removed the second argument for link tags.
+
+### Bug Fixes
+
+- Fixed a bug where extra dots would appear in div tags.
+- Fixed a bug where meta tags would not be inserted into head.
 
 ## 0.2.8
 all by @NoobiCodi
