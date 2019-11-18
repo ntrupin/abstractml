@@ -29,9 +29,9 @@ In short, it allows you to replace this:
 with this
 
 ```CSS
-h1 -> Hello, world!
+h1 > Hello, world!
 hr
-p -> This is AbstractML!
+p > This is AbstractML!
 ```
 
 ## Our Mission
@@ -73,8 +73,7 @@ We believe that you should use AbstractML because it provides a crisp, clean alt
     <body>
         <div>
             <h1>Example Domain</h1>
-            <p>This domain is established to be used for illustrative examples in documents. You may use this
-            domain in examples without prior coordination or asking for permission.</p>
+            <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
             <p><a href="http://www.iana.org/domains/example">More information...</a></p>
         </div>
     </body>
@@ -84,15 +83,16 @@ We believe that you should use AbstractML because it provides a crisp, clean alt
 Can easily be written in AbstractML like this:
 
 ```css
-meta -> charset="utf-8"
-meta -> name="viewport" content="width=device-width, initial-scale=1"
-link -> rel="stylesheet" href="index.css"
-title -> Hello, World!
+title > Example Domain /
+meta | charset="utf-8" /
+meta | http-equiv="Content-type" content="text/html; charset=utf-8" /
+meta | name="viewport" content="width=device-width, initial-scale=1" /
+link | rel="stylesheet" href="index.css" /
 div
-    h1 -> Example Domain
-    p -> This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.
-    a -> href='http://www.iana.org/domains/example' -> More information...
-end -> div
+    h1 > Example Domain /
+    p > This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission. /
+    a | href='http://www.iana.org/domains/example' > More information... /
+/ div
 ```
 
 Both pages were linked to this stylesheet:
@@ -102,28 +102,28 @@ body {
   background-color: #f0f0f2;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;      
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 div {
   width: 600px;
   margin: 5em auto;
-  padding: 50px;
-  background-color: #fff;
-  border-radius: 1em;
+  padding: 2em;
+  background-color: #fdfdff;
+  border-radius: 0.5em;
+  box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.02);
 }
-a:link, a:visited {
+
+a:link,
+a:visited {
   color: #38488f;
   text-decoration: none;
 }
+
 @media (max-width: 700px) {
-  body {
-    background-color: #fff;
-  }
   div {
-    width: auto;
     margin: 0 auto;
-    border-radius: 0;
-    padding: 1em;
+    width: auto;
   }
 }
 ```
