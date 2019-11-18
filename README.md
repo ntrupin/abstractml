@@ -140,7 +140,7 @@ However, AbstractML does not support embedded style or script tags with code nes
 
 ## Documentation
 
-The documentation can be found [here](https://abstractml.github.io/abstractml/).
+The documentation can be found [here](https://ntrupin.github.io/abstractml/).
 
 ## Contributing
 
