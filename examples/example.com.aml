@@ -1,9 +1,10 @@
+title > Example Domain /
 meta | charset="utf-8" /
+meta | http-equiv="Content-type" content="text/html; charset=utf-8" /
 meta | name="viewport" content="width=device-width, initial-scale=1" /
-link | rel="stylesheet" href="src/styles.css" /
-title > Hello, World! /
+link | rel="stylesheet" href="index.css" /
 div
-h1 > Example Domain /
-p > This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission. /
-a | href='http://www.iana.org/domains/example' > More information... /
+    h1 > Example Domain /
+    p > This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission. /
+    a | href='http://www.iana.org/domains/example' > More information... /
 / div
