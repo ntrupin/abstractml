@@ -1,43 +1,3 @@
-const singles = [
-  "h1",
-  "h2",
-  "h3",
-  "h4",
-  "h5",
-  "h6",
-  "p",
-  "time",
-  "a",
-  "abbr",
-  "button",
-  "li",
-  "small",
-  "b",
-  "s",
-  "strong",
-  "u",
-  "textarea"
-];
-const nests = [
-  "div",
-  "section",
-  "article",
-  "span",
-  "center",
-  "header",
-  "nav",
-  "main",
-  "form",
-  "table",
-  "th",
-  "tr",
-  "td",
-  "pre",
-  "code",
-  "ol",
-  "ul"
-];
-const inners = ["img", "input"];
 const heads = ["link", "meta", "script", "title"];
 
 const makeStruct = vals => {
@@ -56,30 +16,36 @@ const Token = makeStruct("type value");
 const tokenize = line => {
   let words = line.split(" ");
   let i = 0;
+  let tmpstr = "";
   let tokens = [];
   while (i < words.length) {
+    tmpstr = "";
     let word = words[i];
-    if (word === "->") {
-      i++;
-      continue;
-    }
     if (i === 0) {
-      tokens.push(new Token("tag", word));
-    } else {
-      let segment = word;
-      i++;
-      while (words[i] !== "->" && i < words.length) {
-        segment += " " + words[i];
-        i++;
+      if (word !== "/") {
+        tokens.push(new Token("tag", word));
+      } else if (word === "/" && i + 1 < words.length) {
+        tokens.push(new Token("tag", `${word}${words[i + 1]}`));
       }
-      if (
-        i + 1 < words.length ||
-        nests.includes(words[i - 3]) ||
-        inners.includes(words[i - 3])
-      ) {
-        tokens.push(new Token("args", segment));
-      } else {
-        tokens.push(new Token("text", segment));
+    } else {
+      if (word === "|" && i + 1 < words.length) {
+        i++;
+        while (words[i] !== ">" && words[i] !== "/" && i < words.length) {
+          tmpstr += words[i];
+          i++;
+        }
+        i--;
+        tokens.push(new Token("attr", tmpstr));
+      } else if (word === ">" && i + 1 < words.length) {
+        i++;
+        while (words[i] !== "/" && i < words.length) {
+          tmpstr += `${words[i]} `;
+          i++;
+        }
+        i--;
+        tokens.push(new Token("text", tmpstr));
+      } else if (word === "/") {
+        tokens.push(new Token("close", word));
       }
     }
     i++;
@@ -90,64 +56,40 @@ const tokenize = line => {
 const parse = cv => {
   let tokens = tokenize(cv);
   let i = 0;
-  let new_tag = "";
-  let tag_ref = "";
+  let newstr = "";
+  let tagref = "";
   while (i < tokens.length) {
     let token = tokens[i];
-    if (token.type === "tag" && heads.includes(token.value)) {
-      tag_ref = token.value;
-      if (tokens[i + 1].type !== "args" && tokens[i + 1].type !== "text") {
-        console.error("Head elements require arguments!");
-      } else {
-        if (tag_ref === "script") {
-          document.body.innerHTML += stripEmpty`<${tag_ref} ${
-            tokens[i + 1].value
-          }></${tag_ref}>`;
-        } else {
-          document.head.innerHTML += stripEmpty`<${tag_ref} ${
-            tokens[i + 1].value
-          } />`;
-        }
-      }
-      i += 2;
-      continue;
-    }
-    if (token.type === "tag" && token.value !== "end") {
-      tag_ref = token.value;
-      if (i + 1 >= tokens.length) {
-        new_tag += stripEmpty`<${token.value}>`;
-        break;
-      }
-      if (tokens[i + 1].type !== "args") {
-        new_tag += stripEmpty`<${token.value}>`;
-      } else {
-        new_tag += stripEmpty`<${token.value} `;
-      }
-    } else if (token.type === "args") {
-      if (inners.includes(tag_ref)) {
-        new_tag += `${token.value} />`;
-      } else {
-        new_tag += `${token.value}>`;
-      }
+    if (token.type === "tag") {
+      tagref = token.value;
+      newstr += `<${token.value}`;
+    } else if (token.type === "attr") {
+      newstr += stripEmpty` ${token.value}>`;
     } else if (token.type === "text") {
-      if (singles.includes(tag_ref)) {
-        new_tag += `${token.value}`;
-      } else if (nests.includes(tag_ref)) {
-        if (token.value === ".") {
-          new_tag += `</${tag_ref}>`;
-        } else {
-          new_tag += `${token.value}`;
-        }
+      if (tokens[i - 1].type === "attr") {
+        newstr += stripEmpty`${token.value.trim()}`;
+      } else {
+        newstr += stripEmpty`>${token.value.trim()}`;
       }
-    } else if (token.type === "tag" && token.value === "end") {
-      new_tag += `</${tokens[i + 1].value}>`;
+    } else if (token.type === "close") {
+      newstr += `</${tagref}>`;
+    } else {
+      console.error(`Invalid type ${token.type}`);
     }
     i++;
   }
-  if (singles.includes(tag_ref)) {
-    new_tag += `</${tag_ref}>`;
+  if (!newstr.includes(">")) {
+    newstr += ">";
   }
-  return new_tag;
+  if (tagref === "/") {
+    console.log(tokens);
+  }
+  if (heads.includes(tagref)) {
+    document.head.innerHTML += newstr;
+    return "";
+  } else {
+    return newstr;
+  }
 };
 
 const build = program => {
@@ -188,5 +130,3 @@ const stripEmpty = (stringsArg, ...inputsArg) => {
   }
   return str;
 };
-
-build("../index.aml");
