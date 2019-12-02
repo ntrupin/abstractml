@@ -1,4 +1,5 @@
 const heads = ["link", "meta", "script", "title"];
+const self_close = ["hr", "br"];
 
 const makeStruct = vals => {
   var names = vals.split(" ");
@@ -14,7 +15,7 @@ const makeStruct = vals => {
 const Token = makeStruct("type value");
 
 const tokenize = line => {
-  let words = line.split(" ");
+  let words = line.trim().split(" ");
   let i = 0;
   let tmpstr = "";
   let tokens = [];
@@ -39,8 +40,30 @@ const tokenize = line => {
       } else if (word === ">" && i + 1 < words.length) {
         i++;
         while (words[i] !== "/" && i < words.length) {
-          tmpstr += `${words[i]} `;
-          i++;
+          if (words[i] === "{{") {
+            let toparse = "";
+            let ocount = 0;
+            i++;
+            while (ocount !== -1 && i < words.length) {
+              if (words[i] === "{{") {
+                ocount++;
+                toparse += `${words[i]} `;
+              } else if (words[i] === "}}" && ocount !== 0) {
+                ocount--;
+                toparse += `${words[i]} `;
+              } else if (words[i] === "}}" && ocount === 0) {
+                break;
+              } else {
+                toparse += `${words[i]} `;
+              }
+              i++;
+            }
+            tmpstr += `${parse(toparse)} `;
+            i++;
+          } else {
+            tmpstr += `${words[i]} `;
+            i++;
+          }
         }
         i--;
         tokens.push(new Token("text", tmpstr));
@@ -78,11 +101,10 @@ const parse = cv => {
     }
     i++;
   }
-  if (!newstr.includes(">")) {
+  if (!newstr.includes(">") && !self_close.includes(tagref)) {
     newstr += ">";
-  }
-  if (tagref === "/") {
-    console.log(tokens);
+  } else if (!newstr.includes(">") && self_close.includes(tagref)) {
+    newstr += " />";
   }
   if (heads.includes(tagref)) {
     document.head.innerHTML += newstr;
@@ -95,22 +117,21 @@ const parse = cv => {
 const build = program => {
   if (!program.includes("\n") && program.includes(".aml")) {
     var getPage = new Request(program);
-    fetch(getPage).then(function(response) {
-      return response.text().then(function(text) {
+    fetch(getPage).then(response => {
+      return response.text().then(text => {
         let y = text.split("\n");
         let it = "";
-        y.forEach(function(ele) {
+        y.forEach(ele => {
           let output = parse(ele);
           it = it + output;
           document.body.innerHTML = it;
         });
-        console.log(it);
       });
     });
   } else {
     let y = program.split("\n");
     let it = "";
-    y.forEach(function(ele) {
+    y.forEach(ele => {
       let output = parse(ele);
       it = it + output;
       document.body.innerHTML = it;
