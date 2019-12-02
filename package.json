@@ -1,0 +1,23 @@
+{
+  "name": "abstractml",
+  "version": "0.3.1",
+  "description": "An HTML abstraction focused on simplicity",
+  "main": "src/compiler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntrupin/abstractml.git"
+  },
+  "keywords": [
+    "javascript",
+    "markup"
+  ],
+  "author": "Noah Trupin",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ntrupin/abstractml/issues"
+  },
+  "homepage": "https://github.com/ntrupin/abstractml#readme"
+}
